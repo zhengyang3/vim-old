@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/data/huirun/wxl/android_44/android4.4/frameworks/base/packages/SettingsProvider/res/values'
+let g:netrw_dirhist_2='/data/huirun/wxl/tmp'
+let g:netrw_dirhist_3='/home/wxl/test/jjj'
