@@ -95,7 +95,7 @@ function! s:Hi(group, ...)
 endfunction
 
 call s:Hi('Normal', 'off_white', 'bg')
-call s:Hi('Search', 'black', 'lightpurple')
+call s:Hi('Search', 'off_white', 'darkgreen')
 call s:Hi('Visual', '', 'lightpurple')
 call s:Hi('LineNr', 'gray_1')
 call s:Hi('Cursor', 'black', 'white')
