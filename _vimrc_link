@@ -1,0 +1,257 @@
+"Cscope Usage 
+"Usage:
+"#######  cd ~/src/project
+"#######  find path1 path2 -name "*.h" -o -name "*.c" -o -name "*.cpp" -o -name "*.java" >> cscope.files  (find可以同时指定多个路径)
+"#######  cscope -bq         (update datebase automatically)                      
+
+"Ctag Usage
+"#######  ctags -L cscope.files    or   ctags –R
+
+
+"all plugins: 
+"MRU 
+"CommandT 
+"pathogen
+"watchman
+"Nerdtree
+"tagbar
+"minibufexplorer
+"grep
+"quickfix
+"Cscope
+"easymotion
+"expand-region
+
+
+set nu
+set ignorecase
+set smartcase
+"set keywordprg=dic
+"set hlsearch
+set incsearch 
+set foldenable
+set foldmethod=indent
+
+"The two lines set tab convert to 4 spaces automatically!
+set tabstop=4
+set expandtab
+"set auto indent and indent 4 space
+set smartindent
+set shiftwidth=4
+set softtabstop=4
+
+" Identify Chinese Code: 1: Xshell/SecureCRT set UTF-8 must
+"                        2: vim set fileencodings
+"                        3: if you want to use english but can identify Chinese code , set LANG=en_US.UTF-8 in bash.bashrc
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+
+"nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+nmap <space> <C-d>
+nmap B <C-u>
+"nmap gp "0p
+"nmap gP "0P
+
+set t_Co=256
+
+
+let mapleader = ","
+let g:mapleader = ","
+
+
+nmap <leader>r :MRU<CR>
+
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+noremap <leader>t :CommandT<CR>
+set wildignore+=*.o,*.obj,.git,*.pyc,*.ko,out
+let g:CommandTCancelMap=['<Esc>', '<C-c>']
+let g:CommandTMaxFiles=500000
+let g:CommandTMaxCachedDirectories=20
+let g:CommandTFileScanner = 'watchman'
+
+
+nmap <leader>e :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:NERDTreeDirArrows=0
+
+
+"tagbar need ctags, put ctags.exe in your intalled derectory ,not $PATH,If you are using Windows!!
+nmap <leader>a :TagbarToggle<CR>
+let tagbar_left=1
+let tagbar_autofocus=1
+let tagbar_map_help = "&"
+
+"map <C-j> <C-W>j
+"map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+nmap <leader>j <C-W>j
+nmap <leader>k <C-W>k
+
+map <C-k> <C-T>
+map <C-j> <C-]>
+
+nmap <C-p> <Plug>yankstack_substitute_older_paste
+nmap <C-n> <Plug>yankstack_substitute_newer_paste
+
+map K <C-y>
+map J <C-e>
+nnoremap <leader>J J
+
+nnoremap <silent> <F3> :Grep -rnsi<CR>
+nmap <leader>q :qa!<cr>
+nmap <leader>f ]c
+
+
+
+nmap <leader>h :YRShow<CR>
+
+"clear  ,then you can set ff=unix/dos !
+nmap <leader>c :%s/\r$//g<CR>
+
+"Ctags config: the ; must be added,otherwise the file of Tags canot be loaded automatically
+set tags=tags;
+"set autochdir
+
+
+
+"Cscope Usage and Config
+"Usage:
+"#######  cd ~/src/project
+"#######  find . -name "*.h" -o -name "*.c" -o -name "*.cpp" -o -name "*.java" > cscope.files 
+"#######  cscope -bq         (update datebase automatically)                      
+
+if has("cscope") 
+"    set cscopequickfix=s-,c-,d-,i-,t-,e- 
+    set cscopetag 
+    "0 cscope fist; 1 ctags first
+    set csto=1 
+    if filereadable("cscope.out")   
+        cs add cscope.out   
+    "else search cscope.out elsewhere   
+    else   
+       let cscope_file=findfile("cscope.out", ".;")   
+       let cscope_pre=matchstr(cscope_file, ".*/")   
+       if !empty(cscope_file) && filereadable(cscope_file)   
+           exe "cs add" cscope_file cscope_pre   
+       endif             
+     endif 
+    set cscopeverbose 
+
+    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR> 
+    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR> 
+    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR> 
+    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR> 
+    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR> 
+    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR> 
+    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR> 
+    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR> 
+endif
+
+if &diff  
+	colorscheme railscasts
+endif  
+
+
+" allows incsearch highlighting for range commands
+cnoremap $t <CR>:t''<CR>
+cnoremap $T <CR>:T''<CR>
+cnoremap $m <CR>:m''<CR>
+cnoremap $M <CR>:M''<CR>
+cnoremap $d <CR>:d<CR>``
+
+
+
+
+
+
+" // The switch of the Source Explorer 
+nmap <F8> :SrcExplToggle<CR> 
+" // Set the height of Source Explorer window 
+let g:SrcExpl_winHeight = 8 
+" // Set 100 ms for refreshing the Source Explorer 
+let g:SrcExpl_refreshTime = 100 
+" // Set "Enter" key to jump into the exact definition context 
+" let g:SrcExpl_jumpKey = "<ENTER>" 
+" // Set "Space" key for back from the definition context 
+let g:SrcExpl_gobackKey = "<SPACE>" 
+" // In order to Avoid conflicts, the Source Explorer should know what plugins 
+" // are using buffers. And you need add their bufname into the list below 
+" // according to the command ":buffers!" 
+let g:SrcExpl_pluginList = [ 
+        \ "__Tag_List__", 
+        \ "_NERD_tree_", 
+        \ "Source_Explorer" 
+    \ ] 
+" // Enable/Disable the local definition searching, and note that this is not 
+" // guaranteed to work, the Source Explorer doesn't check the syntax for now. 
+" // It only searches for a match with the keyword according to command 'gd' 
+let g:SrcExpl_searchLocalDef = 1 
+" // Do not let the Source Explorer update the tags file when opening 
+let g:SrcExpl_isUpdateTags = 0 
+" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to 
+" //  create/update a tags file 
+let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
+" // Set "<F12>" key for updating the tags file artificially 
+let g:SrcExpl_updateTagsKey = "<F12>" 
+
+
+
+
+
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+
+"Mark plugin config
+nmap  <Leader>s <Plug>MarkRegex
+nmap <Leader>M <Plug>MarkToggle 
+nmap <Leader>N <Plug>MarkAllClear 
+
+
+vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap s :normal vs<CR>
+
+"Jump to the position last time you quit
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+
+let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,.git"
+let g:DirDiffWindowSize = 14
+
+
+nmap <Leader>- :vertical resize -15<cr>
+if bufwinnr(1)
+	map + <C-W>20>
+	map - <C-W>20<
+endif
+
+let g:molokai_original = 1
+
+
+if has("gui_running")
+        "au GUIEnter * simalt ~x " 窗口启动时自动最大化
+        set guioptions-=m " 隐藏菜单栏
+        set guioptions-=T " 隐藏工具栏
+        set guioptions-=L " 隐藏左侧滚动条
+        set guioptions-=r " 隐藏右侧滚动条
+        set guioptions-=b " 隐藏底部滚动条
+        "set showtabline=0 " 隐藏Tab栏
+        set guifont=Inconsolata:h14
+        colorscheme railscasts
+        set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+        winpos 830 150 "设置初始界面位置  
+        set lines=55 columns=93 "设置初始界面大小 
+endif
+
+"colorscheme railscasts
+
+let g:multi_cursor_next_key='<C-h>'
+let g:multi_cursor_prev_key='<C-l>'
+
+
