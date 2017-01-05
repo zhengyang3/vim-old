@@ -21,7 +21,7 @@ let s:pallete = {
       \ 'black':        {'gui': '#000000', 'cterm': 0},
       \ 'red':          {'gui': '#ff0000', 'cterm': 1},
       \ 'purple':       {'gui': '#800000', 'cterm': 5},
-      \ 'lightred':     {'gui': '#ff0000', 'cterm': 9},
+      \ 'lightred':     {'gui': '#ff0000', 'cterm': 22},
       \ 'darkgreen':    {'gui': '#005f00', 'cterm': 22},
       \ 'darkgreen_1':  {'gui': '#005f5f', 'cterm': 23},
       \ 'darkblue':     {'gui': '#005fdf', 'cterm': 26},
