@@ -1,9 +1,13 @@
-"Cscope Usage 
+"Cscope and Ctags Usage 
 "Usage:
+"#######   Ctrl+j/k  (Use ctags's define);        Ctrl+\+ c/f/e (Use Cscope's functions) 
+"#######  Simple:   find ./ -name "*.h" -o -name "*.c" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+"
+"
+"#######  Details:
 "#######  cd ~/src/project
 "#######  find path1 path2 -name "*.h" -o -name "*.c" -o -name "*.cpp" -o -name "*.java" >> cscope.files  (find可以同时指定多个路径)
 "#######  cscope -bq         (update datebase automatically)                      
-
 "Ctag Usage
 "#######  ctags -L cscope.files    or   ctags –R
 
@@ -85,12 +89,12 @@ let tagbar_left=1
 let tagbar_autofocus=1
 let tagbar_map_help = "&"
 
-"map <C-j> <C-W>j
-"map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-nmap <leader>j <C-W>j
-nmap <leader>k <C-W>k
+map zj <C-W>j
+map zk <C-W>k
+map zh <C-W>h
+map zl <C-W>l
+"nmap <leader>j <C-W>j
+"nmap <leader>k <C-W>k
 
 map <C-k> <C-T>
 map <C-j> <C-]>
