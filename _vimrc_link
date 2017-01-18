@@ -89,12 +89,19 @@ let tagbar_left=1
 let tagbar_autofocus=1
 let tagbar_map_help = "&"
 
+
+map z <Nop>
 map zj <C-W>j
 map zk <C-W>k
 map zh <C-W>h
 map zl <C-W>l
-"nmap <leader>j <C-W>j
-"nmap <leader>k <C-W>k
+nnoremap zn :bn<CR>
+nnoremap zp :bp<CR>
+nnoremap zo zn
+nnoremap zm zm
+nnoremap zz zz
+nnoremap z- z-
+nnoremap z<CR> z<CR>
 
 map <C-k> <C-T>
 map <C-j> <C-]>
