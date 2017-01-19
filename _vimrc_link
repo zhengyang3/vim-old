@@ -95,6 +95,8 @@ map zj <C-W>j
 map zk <C-W>k
 map zh <C-W>h
 map zl <C-W>l
+vmap do :diffget<CR>
+map du :diffupdate<CR>
 nnoremap zn :bn<CR>
 nnoremap zp :bp<CR>
 nnoremap zo zn
