@@ -81,13 +81,20 @@ let g:CommandTFileScanner = 'watchman'
 nmap <leader>e :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let g:NERDTreeDirArrows=0
+autocmd VimEnter * NERDTree
+"move the cursor into the main window from nerdtree window
+autocmd VimEnter * wincmd p  
 
 
 "tagbar need ctags, put ctags.exe in your intalled derectory ,not $PATH,If you are using Windows!!
 nmap <leader>a :TagbarToggle<CR>
-let tagbar_left=1
-let tagbar_autofocus=1
+"let tagbar_left=1
+let tagbar_autofocus=0
 let tagbar_map_help = "&"
+autocmd VimEnter * nested :TagbarOpen
+"autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
+"autocmd VimEnter * nested :call tagbar#autoopen(1)
+
 
 
 map z <Nop>
@@ -178,6 +185,8 @@ if has("cscope")
 endif
 
 if &diff  
+    autocmd VimEnter * TagbarClose 
+    autocmd VimEnter * NERDTreeClose
 	colorscheme railscasts
 endif  
 
@@ -275,7 +284,7 @@ if has("gui_running")
         set lines=55 columns=93 "设置初始界面大小 
 endif
 
-"colorscheme railscasts
+colorscheme railscasts
 
 let g:multi_cursor_next_key='<C-h>'
 let g:multi_cursor_prev_key='<C-l>'
