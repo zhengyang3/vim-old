@@ -113,6 +113,10 @@ map gl $
 map gn *
 map gN #
 
+"modify just for EnhancedJumps,the key "{" and "g;" are very convenient
+nmap } g<C-o>
+nmap { g<C-i>
+
 map <C-k> <C-T>
 map <C-j> <C-]>
 
