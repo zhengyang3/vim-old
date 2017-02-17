@@ -115,10 +115,14 @@ nmap dh d^
 nmap dl d$
 vmap do :diffget<CR>
 nmap du :diffupdate<CR>
+nmap dm :windo diffthis<CR>
 map gh ^
 map gl $
 map gn *
 map gN #
+
+"Close every window in the current tabview but the current one
+map go <C-w>o
 
 "modify just for EnhancedJumps,the key "{" and "g;" are very convenient
 nmap } g<C-o>
