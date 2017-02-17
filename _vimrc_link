@@ -102,11 +102,16 @@ nnoremap zm zm
 nnoremap zz zz
 nnoremap z- z-
 nnoremap z<CR> z<CR>
-
+nmap yh y^
+nmap yl y$
+nmap dh d^
+nmap dl d$
 vmap do :diffget<CR>
-map du :diffupdate<CR>
-map dl d$
-map dh d^
+nmap du :diffupdate<CR>
+map gh ^
+map gl $
+map gn *
+map gN #
 
 map <C-k> <C-T>
 map <C-j> <C-]>
@@ -241,6 +246,7 @@ let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,.git"
 let g:DirDiffWindowSize = 14
 
 
+" Adjust windows size, "<C-w>=" To original state
 nmap <Leader>- :vertical resize -15<cr>
 if bufwinnr(1)
 	map + <C-W>20>
