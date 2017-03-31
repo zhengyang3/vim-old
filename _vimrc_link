@@ -124,8 +124,8 @@ map J <C-e>
 nnoremap <leader>J J
 
 nmap <leader>q :qa!<cr>
-nmap <C-[> [c
-nmap <C-]> ]c
+nmap <C-l> [c
+nmap <C-h> ]c
 
 
 "clear  ,then you can set ff=unix/dos !
@@ -219,8 +219,3 @@ if has("gui_running")
 endif
 
 colorscheme railscasts
-
-let g:multi_cursor_next_key='<C-h>'
-let g:multi_cursor_prev_key='<C-l>'
-
-
