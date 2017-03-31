@@ -124,7 +124,8 @@ map J <C-e>
 nnoremap <leader>J J
 
 nmap <leader>q :qa!<cr>
-nmap <leader>f ]c
+nmap <C-[> [c
+nmap <C-]> ]c
 
 
 "clear  ,then you can set ff=unix/dos !
