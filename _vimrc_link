@@ -70,14 +70,6 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-noremap <leader>t :CommandT<CR>
-set wildignore+=*.o,*.obj,.git,*.pyc,*.ko,out
-let g:CommandTCancelMap=['<Esc>', '<C-c>']
-let g:CommandTMaxFiles=500000
-let g:CommandTMaxCachedDirectories=20
-let g:CommandTFileScanner = 'watchman'
-
-
 nmap <leader>e :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let g:NERDTreeDirArrows=0
@@ -131,13 +123,9 @@ map K <C-y>
 map J <C-e>
 nnoremap <leader>J J
 
-nnoremap <silent> <F3> :Grep -rnsi<CR>
 nmap <leader>q :qa!<cr>
 nmap <leader>f ]c
 
-
-
-nmap <leader>h :YRShow<CR>
 
 "clear  ,then you can set ff=unix/dos !
 nmap <leader>c :%s/\r$//g<CR>
@@ -146,13 +134,6 @@ nmap <leader>c :%s/\r$//g<CR>
 set tags=tags;
 "set autochdir
 
-
-
-"Cscope Usage and Config
-"Usage:
-"#######  cd ~/src/project
-"#######  find . -name "*.h" -o -name "*.c" -o -name "*.cpp" -o -name "*.java" > cscope.files 
-"#######  cscope -bq         (update datebase automatically)                      
 
 if has("cscope") 
 "    set cscopequickfix=s-,c-,d-,i-,t-,e- 
@@ -195,43 +176,6 @@ cnoremap $d <CR>:d<CR>``
 
 
 
-
-
-
-" // The switch of the Source Explorer 
-nmap <F8> :SrcExplToggle<CR> 
-" // Set the height of Source Explorer window 
-let g:SrcExpl_winHeight = 8 
-" // Set 100 ms for refreshing the Source Explorer 
-let g:SrcExpl_refreshTime = 100 
-" // Set "Enter" key to jump into the exact definition context 
-" let g:SrcExpl_jumpKey = "<ENTER>" 
-" // Set "Space" key for back from the definition context 
-let g:SrcExpl_gobackKey = "<SPACE>" 
-" // In order to Avoid conflicts, the Source Explorer should know what plugins 
-" // are using buffers. And you need add their bufname into the list below 
-" // according to the command ":buffers!" 
-let g:SrcExpl_pluginList = [ 
-        \ "__Tag_List__", 
-        \ "_NERD_tree_", 
-        \ "Source_Explorer" 
-    \ ] 
-" // Enable/Disable the local definition searching, and note that this is not 
-" // guaranteed to work, the Source Explorer doesn't check the syntax for now. 
-" // It only searches for a match with the keyword according to command 'gd' 
-let g:SrcExpl_searchLocalDef = 1 
-" // Do not let the Source Explorer update the tags file when opening 
-let g:SrcExpl_isUpdateTags = 0 
-" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to 
-" //  create/update a tags file 
-let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
-" // Set "<F12>" key for updating the tags file artificially 
-let g:SrcExpl_updateTagsKey = "<F12>" 
-
-
-
-
-
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
@@ -241,10 +185,6 @@ nmap  <Leader>s <Plug>MarkRegex
 nmap <Leader>M <Plug>MarkToggle 
 nmap <Leader>N <Plug>MarkAllClear 
 
-
-vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
-    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
-omap s :normal vs<CR>
 
 "Jump to the position last time you quit
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
@@ -260,8 +200,6 @@ if bufwinnr(1)
 	map + <C-W>20>
 	map - <C-W>20<
 endif
-
-let g:molokai_original = 1
 
 
 if has("gui_running")

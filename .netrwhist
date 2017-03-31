@@ -1,11 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/data/huirun/wxl/A33_gms51/lichee/brandy/pack_tools/update_uboot'
-let g:netrw_dirhist_2='/data/huirun/wxl/android_44/lichee/brandy/basic_loader/boot0/load_Boot1_from_nand'
-let g:netrw_dirhist_3='/data/huirun/wxl/android_44/android4.4/packages/apps/Launcher2/res'
-let g:netrw_dirhist_4='/data/huirun/wxl/android_44/android4.4/device/softwinner/astar-y3/overlay/packages/apps/Launcher2/res/values-sw600dp-port'
-let g:netrw_dirhist_5='/data/huirun/wxl/android_44/android4.4/packages/apps/Launcher2/res/drawable-sw600dp-hdpi'
-let g:netrw_dirhist_6='/data/huirun/wxl/android_44/android4.4/packages/apps/Launcher2/res/values-sw600dp-land'
-let g:netrw_dirhist_7='/data/huirun/wxl/android_44/android4.4/device/softwinner/astar-y3/overlay/frameworks/base/core/res/res/values'
-let g:netrw_dirhist_8='/data/huirun/wxl/A33_gms51/android/device/softwinner/astar-h7'
-let g:netrw_dirhist_9='/data/huirun/wxl/AndroidN/android/build/blueprint'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/data/huirun/wxl/AndroidN/android/device/softwinner'
+let g:netrw_dirhist_2='/data/huirun/wxl/android_44/lichee/linux-3.4/arch/arm/mach-sunxi/include'
