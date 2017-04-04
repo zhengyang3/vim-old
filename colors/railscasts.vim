@@ -57,8 +57,8 @@ let s:pallete = {
       \ 'gray_1':       {'gui': '#666666', 'cterm': 242},
       \ 'gray_2':       {'gui': '#767676', 'cterm': 243},
       \ 'lightgray':    {'gui': '#a8a8a8', 'cterm': 248},
-      \ 'off_white':    {'gui': '#e4e4e4', 'cterm': 254},
-      \ 'white':        {'gui': '#ffffff', 'cterm': 255},
+      \ 'off_white':    {'gui': '#e4e4e4', 'cterm': 241},
+      \ 'white':        {'gui': '#ffffff', 'cterm': 241},
       \ 'NONE':         {'gui': 'NONE',    'cterm': 'NONE'},
       \}
 
