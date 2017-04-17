@@ -110,8 +110,8 @@ map gN #
 map go <C-w>o
 
 "modify just for EnhancedJumps,the key "{" and "g;" are very convenient
-nmap } g<C-o>
-nmap { g<C-i>
+nmap ( g<C-o>
+nmap ) g<C-i>
 
 map <C-k> <C-T>
 map <C-j> <C-]>
