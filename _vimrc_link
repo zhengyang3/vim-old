@@ -33,8 +33,10 @@ set smartcase
 "set keywordprg=dic
 "set hlsearch
 set incsearch 
-set foldenable
 set foldmethod=indent
+set nofoldenable
+set fdo-=search
+set foldclose=all
 
 "The two lines set tab convert to 4 spaces automatically!
 set tabstop=4
@@ -89,8 +91,17 @@ map zh <C-W>h
 map zl <C-W>l
 nnoremap zn :bn<CR>
 nnoremap zp :bp<CR>
-nnoremap zo zn
+"Tips: use zr with zm; use zo/zv with zc
+"zr:reduce level;   zo:open   zc:close 
+nnoremap zr zr
+nnoremap zR zR
+nnoremap zc zc
+nnoremap zC zC
+nnoremap zo zo
+nnoremap zO zO
 nnoremap zm zm
+nnoremap zM zM
+nnoremap zv zv
 nnoremap zz zz
 nnoremap z- z-
 nnoremap z<CR> z<CR>
