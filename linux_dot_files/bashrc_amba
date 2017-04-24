@@ -1,0 +1,1 @@
+export PATH=/home/wxl/amba_toolchain/prebuilt-native-tools/gcc/bin:/home/wxl/amba_toolchain/gcc-arm-none-eabi-4_9-2015q3/bin:$PATH

@@ -1,0 +1,17 @@
+[user]
+	email = Fermin@foxmail.com
+	name = Fermin
+[core]
+	editor = vim
+	autocrlf = false
+	safecrlf = true
+[color]
+	ui = auto
+[log]
+	date = iso
+[alias]
+    st = status
+    cm = commit
+    ck = checkout
+    br = branch
+    bts   = log --decorate --oneline
