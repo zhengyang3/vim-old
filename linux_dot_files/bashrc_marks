@@ -49,10 +49,15 @@ function mark {
 
 function jump { 
     if [ -L "$MARKPATH/$1" ] ; then
-        local gen1=$(readlink "$MARKPATH/$1")
-        local gen2=$(getroot)
-        local gen3="$gen2""$gen1"
-        cd $gen3
+        local link=$(readlink "$MARKPATH/$1")
+        if [ ! -d "$link" ] ; then
+            local gen1=$link
+            local gen2=$(getroot)
+            local gen3="$gen2""$gen1"
+            cd $gen3
+        else
+            cd $link
+        fi
     else
         echo "No such mark: $1"
     fi
