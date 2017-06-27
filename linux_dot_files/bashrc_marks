@@ -1,0 +1,68 @@
+export MARKPATH=$HOME/.marks
+#function mark { 
+#	mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+#}
+function unmark { 
+	rm -i "$MARKPATH/$1"
+}
+
+#function marks {
+#	\ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
+#}
+
+function marks {
+    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+}
+
+function getroot {
+    local TOPFILE=android/build/core/envsetup.mk
+    if [ -n "$TOP" -a -f "$TOP/$TOPFILE" ] ; then
+        # The following circumlocution ensures we remove symlinks from TOP.
+        (cd $TOP; PWD= /bin/pwd)
+    else
+        if [ -f $TOPFILE ] ; then
+            # The following circumlocution (repeated below as well) ensures
+            # that we record the true directory name and not one that is
+            # faked up with symlink names.
+            PWD= /bin/pwd
+        else
+            local HERE=$PWD
+            T=
+            while [ \( ! \( -f $TOPFILE \) \) -a \( $PWD != "/" \) ]; do
+                \cd ..
+                T=`PWD= /bin/pwd -P`
+            done
+            \cd $HERE
+            if [ -f "$T/$TOPFILE" ]; then
+                echo $T
+            fi
+        fi
+    fi
+}
+
+function mark {
+    local str1=$(/bin/pwd) 
+    local str2=$(getroot)
+    local str3=${str1#*${str2}}
+	mkdir -p "$MARKPATH"; ln -s "$str3" "$MARKPATH/$1"
+}
+
+function jump { 
+    if [ -L "$MARKPATH/$1" ] ; then
+        local gen1=$(readlink "$MARKPATH/$1")
+        local gen2=$(getroot)
+        local gen3="$gen2""$gen1"
+        cd $gen3
+    else
+        echo "No such mark: $1"
+    fi
+}
+
+_completemarks() {
+  local curw=${COMP_WORDS[COMP_CWORD]}
+  local wordlist=$(find $MARKPATH -type l -printf "%f\n")
+  COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+  return 0
+}
+
+complete -F _completemarks jump unmark
