@@ -51,7 +51,7 @@ function mk {
     fi
 }
 
-function ff { 
+function cdl {
     if [ -L "$MARKPATH/$1" ] ; then
         local link=$(readlink "$MARKPATH/$1")
         if [ ! -d "$link" ] ; then
@@ -74,4 +74,4 @@ _completemarks() {
   return 0
 }
 
-complete -F _completemarks ff unmark
+complete -F _completemarks cdl unmark
