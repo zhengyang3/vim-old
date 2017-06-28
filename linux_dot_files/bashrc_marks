@@ -10,7 +10,7 @@ function unmark {
 #	\ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
 #}
 
-function marks {
+function mks {
     ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
 
@@ -40,14 +40,18 @@ function getroot {
     fi
 }
 
-function mark {
+function mk {
     local str1=$(/bin/pwd) 
     local str2=$(getroot)
     local str3=${str1#*${str2}}
-	mkdir -p "$MARKPATH"; ln -s "$str3" "$MARKPATH/$1"
+    if [ -z "$str3" ] ; then
+        mkdir -p "$MARKPATH"; ln -s "$str2" "$MARKPATH/$1"
+    else
+        mkdir -p "$MARKPATH"; ln -s "$str3" "$MARKPATH/$1"
+    fi
 }
 
-function jump { 
+function ff { 
     if [ -L "$MARKPATH/$1" ] ; then
         local link=$(readlink "$MARKPATH/$1")
         if [ ! -d "$link" ] ; then
@@ -70,4 +74,4 @@ _completemarks() {
   return 0
 }
 
-complete -F _completemarks jump unmark
+complete -F _completemarks ff unmark
