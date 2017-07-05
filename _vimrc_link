@@ -47,6 +47,10 @@ set smartindent
 set shiftwidth=4
 set softtabstop=4
 
+set noundofile
+set nobackup
+set noswapfile
+
 " Identify Chinese Code: 1: Xshell/SecureCRT set UTF-8 must
 "                        2: vim set fileencodings
 "                        3: if you want to use english but can identify Chinese code , set LANG=en_US.UTF-8 in bash.bashrc
