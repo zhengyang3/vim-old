@@ -90,6 +90,7 @@ map zj <C-W>j
 map zk <C-W>k
 map zh <C-W>h
 map zl <C-W>l
+map zu [{<bar>zz
 nnoremap zb :bn<CR>
 "Tips: use zr with zm; use zo/zv with zc
 "zr:reduce level;   zo:open   zc:close 
