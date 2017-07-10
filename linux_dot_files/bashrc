@@ -204,7 +204,8 @@ if [[ $BASH_VERSION > "2.05a" ]]; then
   bind -x "\"\C-a\":cd_func -- ;"
 fi
 
-alias tmux="TERM=screen-256color-bce tmux"
+#forced to use 256 color
+alias tmux="tmux -2"
 
 
 dirdiff() {
