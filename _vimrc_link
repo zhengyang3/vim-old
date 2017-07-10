@@ -232,6 +232,8 @@ if has("gui_running")
         set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
         winpos 830 150 "设置初始界面位置  
         set lines=55 columns=93 "设置初始界面大小 
+	imap <C-c> <C-Insert>
+	imap <C-v> <S-Insert>
 endif
 
 colorscheme railscasts
