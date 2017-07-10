@@ -55,8 +55,8 @@ set noswapfile
 "                        2: vim set fileencodings
 "                        3: if you want to use english but can identify Chinese code , set LANG=en_US.UTF-8 in bash.bashrc
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-set termencoding=utf-8
-set encoding=utf-8
+"set termencoding=utf-8
+"set encoding=utf-8
 
 "nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 nmap <space> <C-d>
@@ -229,7 +229,7 @@ if has("gui_running")
         "set showtabline=0 " 隐藏Tab栏
         set guifont=Inconsolata:h14
         colorscheme railscasts
-        set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+        "set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
         winpos 830 150 "设置初始界面位置  
         set lines=55 columns=93 "设置初始界面大小 
 	vmap <C-c> <C-Insert>
