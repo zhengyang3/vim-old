@@ -256,8 +256,40 @@ sdirdiff() {
     svn diff -r "$1":"$2" --summarize
 }
 
-alias cs_create='find . -name "*.h" -o -name "*.c" >> cscope.files ; cscope -bq ; ctags -L cscope.files'
 
+csc() {
+    if [ ! -z "$2" ]; then
+        find "$2" -name "*.h" -o -name "*.c" >> cscope.files
+    fi
+    if [ ! -z "$1" ]; then
+        find "$1" -name "*.h" -o -name "*.c" >> cscope.files
+    fi
+    find . -name "*.h" -o -name "*.c" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+}
+
+cscpp() {
+    if [ ! -z "$2" ]; then
+        find "$2" -name "*.h" -o -name "*.cpp" >> cscope.files
+    fi
+    if [ ! -z "$1" ]; then
+        find "$1" -name "*.h" -o -name "*.cpp" >> cscope.files
+    fi
+    find . -name "*.h" -o -name "*.cpp" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+}
+
+csjava() {
+    if [ ! -z "$2" ]; then
+        find "$2" -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$1" ]; then
+        find "$1" -name "*.java" -o -name "*.cpp" >> cscope.files
+    fi
+    find . -name "*.java" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+}
+
+csclear() {
+    rm cscope* tags
+}
 
 lsh(){
         echo "----------------------------------------ls help------------------------------"
