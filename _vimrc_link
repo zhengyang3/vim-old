@@ -99,8 +99,8 @@ nnoremap zb :bn<CR>
 "Tips: use zr with zm; use zo/zv with zc
 "zr:reduce level;   zo:open   zc:close 
 nnoremap zz zz
-nnoremap zn zr<bar>zz
-nnoremap zN zR<bar>zz
+nnoremap zr zr<bar>zz
+nnoremap zR zR<bar>zz
 nnoremap zc zc<bar>zz
 nnoremap zC zC<bar>zz
 nnoremap zo zo<bar>zz
@@ -128,6 +128,9 @@ map go <C-w>o
 "modify just for EnhancedJumps,the key "{" and "g;" are very convenient
 nmap ( g<C-o><bar>zz
 nmap ) g<C-i><bar>zz
+
+nmap zb :BufSurfBack<cr>
+nmap zn :BufSurfForward<cr>
 
 map <C-k> <C-T>
 map <C-j> <C-]>
