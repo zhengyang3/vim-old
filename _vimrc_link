@@ -204,7 +204,8 @@ nmap <Leader>N <Plug>MarkAllClear
 
 
 "Jump to the position last time you quit
-au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+"au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
 let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,.git"
