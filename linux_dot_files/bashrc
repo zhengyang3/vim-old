@@ -258,34 +258,98 @@ sdirdiff() {
 
 
 csc() {
+    if [ ! -z "$8" ]; then
+        find "$8" -name "*.h" -o -name "*.c" >> cscope.files
+    fi
+    if [ ! -z "$7" ]; then
+        find "$7" -name "*.h" -o -name "*.c" >> cscope.files
+    fi
+    if [ ! -z "$6" ]; then
+        find "$6" -name "*.h" -o -name "*.c" >> cscope.files
+    fi
+    if [ ! -z "$5" ]; then
+        find "$5" -name "*.h" -o -name "*.c" >> cscope.files
+    fi
+    if [ ! -z "$4" ]; then
+        find "$4" -name "*.h" -o -name "*.c" >> cscope.files
+    fi
+    if [ ! -z "$3" ]; then
+        find "$3" -name "*.h" -o -name "*.c" >> cscope.files
+    fi
     if [ ! -z "$2" ]; then
         find "$2" -name "*.h" -o -name "*.c" >> cscope.files
     fi
     if [ ! -z "$1" ]; then
-        find "$1" -name "*.h" -o -name "*.c" >> cscope.files
+        find "$1" -name "*.h" -o -name "*.c" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+    else
+        echo ""
+        echo "Please enter the path !!!!"
+        echo ""
     fi
-    find . -name "*.h" -o -name "*.c" >> cscope.files ; cscope -bq ; ctags -L cscope.files
 }
 
 cscpp() {
+    if [ ! -z "$8" ]; then
+        find "$8" -name "*.h" -o -name "*.cpp" >> cscope.files
+    fi
+    if [ ! -z "$7" ]; then
+        find "$7" -name "*.h" -o -name "*.cpp" >> cscope.files
+    fi
+    if [ ! -z "$6" ]; then
+        find "$6" -name "*.h" -o -name "*.cpp" >> cscope.files
+    fi
+    if [ ! -z "$5" ]; then
+        find "$5" -name "*.h" -o -name "*.cpp" >> cscope.files
+    fi
+    if [ ! -z "$4" ]; then
+        find "$4" -name "*.h" -o -name "*.cpp" >> cscope.files
+    fi
+    if [ ! -z "$3" ]; then
+        find "$3" -name "*.h" -o -name "*.cpp" >> cscope.files
+    fi
     if [ ! -z "$2" ]; then
         find "$2" -name "*.h" -o -name "*.cpp" >> cscope.files
     fi
     if [ ! -z "$1" ]; then
-        find "$1" -name "*.h" -o -name "*.cpp" >> cscope.files
+        find "$1" -name "*.h" -o -name "*.cpp" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+    else
+        echo ""
+        echo "Please enter the path !!!!"
+        echo ""
     fi
-    find . -name "*.h" -o -name "*.cpp" >> cscope.files ; cscope -bq ; ctags -L cscope.files
 }
 
 csjava() {
+    if [ ! -z "$8" ]; then
+        find "$8" -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$7" ]; then
+        find "$7" -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$6" ]; then
+        find "$6" -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$5" ]; then
+        find "$5" -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$4" ]; then
+        find "$4" -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$3" ]; then
+        find "$3" -name "*.java" >> cscope.files
+    fi
     if [ ! -z "$2" ]; then
         find "$2" -name "*.java" >> cscope.files
     fi
     if [ ! -z "$1" ]; then
-        find "$1" -name "*.java" -o -name "*.cpp" >> cscope.files
+        find "$1" -name "*.java" -o -name "*.cpp" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+    else
+        echo ""
+        echo "Please enter the path !!!!"
+        echo ""
     fi
-    find . -name "*.java" >> cscope.files ; cscope -bq ; ctags -L cscope.files
 }
+
 
 csclear() {
     rm cscope* tags
