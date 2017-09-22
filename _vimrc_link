@@ -143,7 +143,7 @@ map K <C-y>
 map J <C-e>
 nnoremap <leader>J J
 
-"nmap <leader>q :qa!<cr>
+nmap <leader>q :qa!<cr>
 nmap q: :q
 
 nmap <C-l> [c<bar>zz
@@ -244,3 +244,25 @@ if has("gui_running")
 endif
 
 colorscheme railscasts
+
+
+let g:xptemplate_key = '<Tab>'
+let g:xptemplate_vars = "BRfun= "
+" Prevent supertab from mapping <tab> to anything.
+let g:SuperTabMappingForward = '<Plug>xpt_void'
+
+" Tell XPTemplate what to fall back to, if nothing matches.
+" Original SuperTab() yields nothing if g:SuperTabMappingForward was set to
+" something it does not know.
+let g:xptemplate_fallback = '<C-r>=XPTwrapSuperTab("n")<CR>'
+
+fun! XPTwrapSuperTab(command) "{{{
+    let v = SuperTab(a:command)
+    if v == ''
+        " Change \<Tab> to whatever you want, when neither XPTemplate or
+        " supertab needs to do anything.
+        return "\<Tab>"
+    else
+        return v
+    end
+endfunction "}}}
