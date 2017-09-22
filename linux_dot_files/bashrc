@@ -368,4 +368,16 @@ lsh(){
         echo "-----------------------------------------------------------------------------"
 }
 
+fdh(){
+        echo "----------------------------------------find help------------------------------"
+        echo ""
+        echo ""
+        echo '     find . -iname "*.h" ! -path "./arch/arm/mach*"           :ignore some files, donot forget * ,it is mandatory.'
+        echo ""
+        echo '     find -name "BoardConfig.mk" -prune -o -type f -print     '
+        echo ""
+        echo ""
+        echo "-----------------------------------------------------------------------------"
+}
+
 source ~/.bashrc_marks
