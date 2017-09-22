@@ -144,7 +144,8 @@ map J <C-e>
 nnoremap <leader>J J
 
 nmap <leader>q :qa!<cr>
-nmap q: :q
+nmap q <Nop>
+"nmap q: :q
 
 nmap <C-l> [c<bar>zz
 nmap <C-h> ]c<bar>zz
