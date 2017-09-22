@@ -207,6 +207,9 @@ fi
 #forced to use 256 color
 alias tmux="tmux -2"
 
+#job font
+alias jf="fg"
+
 
 dirdiff() {
     #do things with parameters like $1 such as
