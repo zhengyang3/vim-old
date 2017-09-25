@@ -375,8 +375,9 @@ lsh(){
 fdh(){
         echo "----------------------------------------find help------------------------------"
         echo ""
+        echo "    //ignore some files, donot forget * ,it is mandatory. note: there are two same -path !!"
         echo ""
-        echo '     find . -iname "*.h" ! -path "./arch/arm/*"           :ignore some files, donot forget * ,it is mandatory.'
+        echo '     find . -iname "*.h" ! -path "./arch/arm/*" -o -iname "*.c" ! -path "./arch/arm/*" '
         echo ""
         echo '     find -name "BoardConfig.mk" -prune -o -type f -print     '
         echo ""
