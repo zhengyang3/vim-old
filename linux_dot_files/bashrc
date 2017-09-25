@@ -381,3 +381,7 @@ fdh(){
 }
 
 source ~/.bashrc_marks
+
+vimlock() {
+	vim -c 'cmap wq <NOP>' -c 'cmap q <NOP>' -c 'cmap qa! <NOP>'
+}
