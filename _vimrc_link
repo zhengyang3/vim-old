@@ -147,6 +147,13 @@ nmap <leader>q :qa!<cr>
 nmap q <Nop>
 "nmap q: :q
 
+
+"""""Using multiple Ex commands in a map:
+"""""http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
+nmap <silent> <leader>l :cmap wq <NOP><CR>:cmap q <NOP><CR>:cmap qa! <NOP><CR>:echo "Vim Locked"<CR>
+
+
+
 nmap <C-l> [c<bar>zz
 nmap <C-h> ]c<bar>zz
 

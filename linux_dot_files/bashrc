@@ -207,10 +207,6 @@ fi
 #forced to use 256 color
 alias tmux="tmux -2"
 
-#job font
-alias jf="fg"
-
-
 dirdiff() {
     #do things with parameters like $1 such as
     vim -c ':colorscheme railscasts' -c ":DirDiff "$1" "$2""
@@ -221,6 +217,14 @@ fd(){
     find . -name ".repo" -prune -o -name ".git" -prune -o -name "out" -prune -o -iname "$1" -print
 }
 
+
+jf(){
+    if [ ! -z "$1" ]; then
+        fg "$1"
+    else
+        fg
+    fi
+}
 
 tgz(){
     src="$1"
