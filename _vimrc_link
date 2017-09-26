@@ -81,6 +81,7 @@ nmap <leader>e :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let g:NERDTreeDirArrows=0
 let g:NERDTreeWinPos=1
+let g:NERDTreeIgnore = ['\.o$','\.mod\.c$','\.mod\.o$','modules\.order','modules\.builtin']
 
 
 "tagbar need ctags, put ctags.exe in your intalled derectory ,not $PATH,If you are using Windows!!
