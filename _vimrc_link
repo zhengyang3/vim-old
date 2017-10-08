@@ -208,7 +208,7 @@ cnoremap $d <CR>:d<CR>``
 
 
 "for vim-smooth-scroll plugin configure.
-let g:ms_per_line=20
+let g:ms_per_line=16
 
 
 vmap v <Plug>(expand_region_expand)
