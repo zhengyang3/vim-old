@@ -140,8 +140,8 @@ map <C-j> <C-]>
 nmap <C-p> <Plug>yankstack_substitute_older_paste
 nmap <C-n> <Plug>yankstack_substitute_newer_paste
 
-map K <C-y>
-map J <C-e>
+map K 2<C-y>
+map J 2<C-e>
 nnoremap <leader>J J
 
 nmap <leader>q :qa!<cr>
