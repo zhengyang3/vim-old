@@ -97,7 +97,6 @@ map zk <C-W>k
 map zh <C-W>h
 map zl <C-W>l
 map zu [{
-nnoremap zb :bn<CR>
 "Tips: use zr with zm; use zo/zv with zc
 "zr:reduce level;   zo:open   zc:close 
 nnoremap zz zz
@@ -131,8 +130,8 @@ map go <C-w>o
 nmap ( g<C-o><bar>zz
 nmap ) g<C-i><bar>zz
 
-nmap zb :BufSurfBack<cr>
-nmap zn :BufSurfForward<cr>
+nmap < :BufSurfBack<cr>
+nmap > :BufSurfForward<cr>
 
 map <C-k> <C-T>
 map <C-j> <C-]>
