@@ -50,6 +50,7 @@ set softtabstop=4
 set noundofile
 set nobackup
 set noswapfile
+set mouse=a
 
 " Identify Chinese Code: 1: Xshell/SecureCRT set UTF-8 must
 "                        2: vim set fileencodings
@@ -130,8 +131,8 @@ map go <C-w>o
 nmap ( g<C-o><bar>zz
 nmap ) g<C-i><bar>zz
 
-nmap < :BufSurfBack<cr>
-nmap > :BufSurfForward<cr>
+nmap zb :BufSurfBack<cr>
+nmap zn :BufSurfForward<cr>
 
 map <C-k> <C-T>
 map <C-j> <C-]>
