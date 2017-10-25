@@ -50,7 +50,7 @@ set softtabstop=4
 set noundofile
 set nobackup
 set noswapfile
-set mouse=a
+"set mouse=a
 
 " Identify Chinese Code: 1: Xshell/SecureCRT set UTF-8 must
 "                        2: vim set fileencodings
