@@ -221,6 +221,12 @@ nmap <Leader>M <Plug>MarkToggle
 nmap <Leader>N <Plug>MarkAllClear 
 
 
+
+let g:proj_window_width=130
+let g:proj_flags="cimst"
+nmap <silent> <Leader>w <Plug>ToggleProject
+
+
 "Jump to the position last time you quit
 "au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
