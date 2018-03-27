@@ -105,6 +105,7 @@ nnoremap zz zz
 nnoremap zr zr<bar>zz
 nnoremap zR zR<bar>zz
 nnoremap zc zc<bar>zz
+vnoremap zc zc<bar>zz
 nnoremap zC zC<bar>zz
 nnoremap zo zo<bar>zz
 nnoremap zO zO<bar>zz
