@@ -385,6 +385,18 @@ fdh(){
         echo "-----------------------------------------------------------------------------"
 }
 
+agh(){
+        echo "----------------------------------------ag help------------------------------"
+        echo ""
+        echo '           --ignore={"*.java",   "*.html",   "*.*.html"}             use wildcard character     '
+        echo ""
+        echo '                      -G   ".*.java"                         use RegExp  '
+        echo ""
+        echo "                      -l                         only list file name    "
+        echo ""
+        echo "-----------------------------------------------------------------------------"
+}
+
 source ~/.bashrc_marks
 
 vimlock() {
