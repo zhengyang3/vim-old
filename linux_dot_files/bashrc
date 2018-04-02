@@ -207,6 +207,8 @@ fi
 #forced to use 256 color
 alias tmux="tmux -2"
 
+alias ag='ag --path-to-ignore ~/.agignore'
+
 dirdiff() {
     #do things with parameters like $1 such as
     vim -c ':colorscheme railscasts' -c ":DirDiff "$1" "$2""
