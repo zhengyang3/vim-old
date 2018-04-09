@@ -399,6 +399,17 @@ agh(){
         echo "-----------------------------------------------------------------------------"
 }
 
+teeh(){
+        echo "----------------------------------------tee help------------------------------"
+        echo ""
+        echo '                       xxxx 2>&1 | tee xxx.log '
+        echo ""
+        echo '                       example: mm -j4 2>&1 | tee ~/kkk.log '
+        echo ""
+        echo '                       2:stderr  1:stdout;    so "2>&1" will put all log to kkk.log    '
+        echo ""
+        echo "-----------------------------------------------------------------------------"
+}
 source ~/.bashrc_marks
 
 vimlock() {
