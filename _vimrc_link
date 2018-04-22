@@ -224,7 +224,7 @@ nmap <Leader>N <Plug>MarkAllClear
 
 
 
-let g:proj_window_width=130
+let g:proj_window_width=100
 let g:proj_flags="cimst"
 nmap <silent> <Leader>w <Plug>ToggleProject
 
