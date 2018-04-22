@@ -91,6 +91,7 @@ nmap <leader>a :TagbarToggle<CR>
 let tagbar_left=1
 let tagbar_autofocus=1
 let tagbar_map_help = "&"
+let tagbar_map_openfold = "zo"
 
 
 map z <Nop>
