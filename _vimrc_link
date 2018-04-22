@@ -239,10 +239,11 @@ let g:DirDiffWindowSize = 14
 
 
 " Adjust windows size, "<C-w>=" To original state
-nmap <Leader>- :vertical resize -15<cr>
+"nmap <Leader>- :vertical resize -15<cr>
+nmap <Leader>= <C-w>=
 if bufwinnr(1)
-	map + <C-W>20>
-	map - <C-W>20<
+	map + <C-W>5>
+	map _ <C-W>5<
 endif
 
 
