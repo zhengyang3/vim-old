@@ -1,4 +1,14 @@
-Sample=/data/huirun/wxl/android_44/android/frameworks CD=. filter="*.c *.h" {
-        # xxxxxxxxxxxx
-    native/services/sensorservice/SensorService.cpp
+#           
+#          Project-plugin        
+#                                
+#            By Aric Blumer
+#      aricvim email-at-sign charter.net
+#   Plugin for managing multiple projects with multiple sources
+#
+#   ********  **********     *********
+
+OBJ_InputManager =~/Study/A33_gms51/android/frameworks CD=. filter="*.c *.h" {
+  native/services/inputflinger/InputManager.cpp
+#    mDispatcher = new InputDispatcher(dispatcherPolicy);
+     native/services/inputflinger/InputDispatcher.cpp
 }

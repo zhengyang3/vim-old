@@ -79,17 +79,18 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-nmap <leader>e :NERDTreeToggle<CR>
+"nmap <leader>e :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let g:NERDTreeDirArrows=0
 let g:NERDTreeWinPos=1
 let g:NERDTreeIgnore = ['\.o$','\.mod\.c$','\.mod\.o$','modules\.order','modules\.builtin']
+let g:NERDTreeWinSize=40
 
 "tagbar need ctags, put ctags.exe in your intalled derectory ,not $PATH,If you are using Windows!!
-nmap <leader>a :TagbarToggle<CR>
-let tagbar_left=1
+"nmap <leader>a :TagbarToggle<CR>
+let tagbar_left=0
 let tagbar_autofocus=0
-"let g:tagbar_width=40
+let g:tagbar_width=40
 let tagbar_map_help = "&"
 let tagbar_map_openfold = "zo"
 let tagbar_map_closefold = "zc"
@@ -226,8 +227,8 @@ nmap <Leader>N <Plug>MarkAllClear
 
 
 
-let g:proj_window_width=100
-let g:proj_flags="cist"
+let g:proj_window_width=40
+let g:proj_flags="ist"
 nmap <silent> <Leader>w <Plug>ToggleProject
 
 
@@ -364,3 +365,39 @@ function! ToggleProjectAndTagbar()
   "  endfor
 endfunction
 "nnoremap <leader>y :call ToggleProjectAndTagbar()<CR>
+
+function! ToggleNERDTreeOrTagbarByTurns()
+    let w:jumpbacktohere = 1
+
+    " Detect which plugins are open
+    if exists('t:NERDTreeBufName')
+        let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
+    else
+        let nerdtree_open = 0
+    endif
+    let tagbar_open = bufwinnr('__Tagbar__') != -1
+
+    " Perform the appropriate action
+    if nerdtree_open && tagbar_open
+        NERDTreeClose
+        TagbarClose
+    elseif nerdtree_open
+        NERDTreeClose
+        TagbarOpen
+    elseif tagbar_open
+        TagbarClose
+        NERDTree
+    else
+        TagbarOpen
+    endif
+
+    " Jump back to the original window
+    for window in range(1, winnr('$'))
+        execute window . 'wincmd w'
+        if exists('w:jumpbacktohere')
+            unlet w:jumpbacktohere
+            break
+        endif
+    endfor
+endfunction
+nnoremap <leader>a :call ToggleNERDTreeOrTagbarByTurns()<CR>
