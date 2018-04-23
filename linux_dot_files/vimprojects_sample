@@ -7,8 +7,14 @@
 #
 #   ********  **********     *********
 
-OBJ_InputManager =~/Study/A33_gms51/android/frameworks CD=. filter="*.c *.h" {
-  native/services/inputflinger/InputManager.cpp
-#    mDispatcher = new InputDispatcher(dispatcherPolicy);
-     native/services/inputflinger/InputDispatcher.cpp
+OBJ_InputManager                          =~/Study/A33_gms51/android/frameworks CD=. filter="*.c *.h" {
+                                          native/services/inputflinger/InputManager.cpp
+#     mDispatcher                          = new InputDispatcher(dispatcherPolicy);
+                                           native/services/inputflinger/InputDispatcher.cpp
+#     mReader                              = new InputReader(eventHub, readerPolicy, mDispatcher);
+                                           native/services/inputflinger/InputReader.cpp
+#     mReaderThread                        = new InputReaderThread(mReader);
+                                           native/services/inputflinger/InputReader.cpp
+#     mDispatcherThread                    = new InputDispatcherThread(mDispatcher);
+                                           native/services/inputflinger/InputDispatcher.cpp
 }
