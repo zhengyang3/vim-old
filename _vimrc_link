@@ -85,13 +85,14 @@ let g:NERDTreeDirArrows=0
 let g:NERDTreeWinPos=1
 let g:NERDTreeIgnore = ['\.o$','\.mod\.c$','\.mod\.o$','modules\.order','modules\.builtin']
 
-
 "tagbar need ctags, put ctags.exe in your intalled derectory ,not $PATH,If you are using Windows!!
 nmap <leader>a :TagbarToggle<CR>
 let tagbar_left=1
-let tagbar_autofocus=1
+let tagbar_autofocus=0
+"let g:tagbar_width=40
 let tagbar_map_help = "&"
 let tagbar_map_openfold = "zo"
+let tagbar_map_closefold = "zc"
 
 
 map z <Nop>
@@ -226,7 +227,7 @@ nmap <Leader>N <Plug>MarkAllClear
 
 
 let g:proj_window_width=100
-let g:proj_flags="cimst"
+let g:proj_flags="cist"
 nmap <silent> <Leader>w <Plug>ToggleProject
 
 
@@ -310,3 +311,56 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+
+function! ToggleProjectAndTagbar()
+    "let w:jumpbacktohere = 1
+
+    " Detect which plugins are open
+    " Identify Tagbar buffer; just using bufwinner is ok;
+    let tagbar_open = bufwinnr('__Tagbar__') != -1
+
+    " Identify vimproject buffer; Copy from project.vim ; it has to use both exist and bufwinner;
+    if !exists('g:proj_running') || bufwinnr(g:proj_running) == -1
+        let proj_open = 0
+    else
+        let proj_open = 1
+    endif
+
+    " Perform the appropriate action
+    if proj_open && tagbar_open
+        "The below 7 lines coped from project.vim implement ProjectClose
+        let g:proj_mywindow = winnr()
+        Project
+        hide
+        if(winnr() != g:proj_mywindow)
+            wincmd p
+        endif
+        unlet g:proj_mywindow
+    elseif proj_open
+        "The below 7 lines coped from project.vim implement ProjectClose
+        let g:proj_mywindow = winnr()
+        Project
+        hide
+        if(winnr() != g:proj_mywindow)
+            wincmd p
+        endif
+        unlet g:proj_mywindow
+        TagbarOpen
+    elseif tagbar_open
+        TagbarClose
+        Project
+    else
+        Project
+    endif
+
+    " Jump back to the original window
+  "  for window in range(1, winnr('$'))
+  "      execute window . 'wincmd w'
+  "      if exists('w:jumpbacktohere')
+  "          unlet w:jumpbacktohere
+  "          break
+  "      endif
+  "  endfor
+endfunction
+"nnoremap <leader>y :call ToggleProjectAndTagbar()<CR>
