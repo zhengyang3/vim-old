@@ -1444,7 +1444,7 @@ function! <SID>SrcExpl_Init()
     let s:SrcExpl_lastSymbol = ''
 
     " Auto change current work directory
-    exe "set autochdir"
+    "exe "set autochdir"
     " Let Vim find the possible tags file
     exe "set tags=tags;"
     " Set the actual update time according to user's requirement
@@ -1452,12 +1452,12 @@ function! <SID>SrcExpl_Init()
     exe "set updatetime=" . string(g:SrcExpl_refreshTime)
 
     " Open all the folds
-    if has("folding")
-        " Open this file at first
-        exe "normal " . "zR"
-        " Let it works during the whole editing session
-        exe "set foldlevelstart=" . "99"
-    endif
+    "if has("folding")
+    "    " Open this file at first
+    "    exe "normal " . "zR"
+    "    " Let it works during the whole editing session
+    "    exe "set foldlevelstart=" . "99"
+    "endif
 
     " We must get the edit window number
     let l:tmp = <SID>SrcExpl_GetEditWin()
