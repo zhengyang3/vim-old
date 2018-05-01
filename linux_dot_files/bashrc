@@ -351,7 +351,7 @@ csjava() {
         find "$2" -name "*.java" >> cscope.files
     fi
     if [ ! -z "$1" ]; then
-        find "$1" -name "*.java" -o -name "*.cpp" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+        find "$1" -name "*.java" >> cscope.files ; cscope -bq ; ctags -L cscope.files
     else
         echo ""
         echo "Please enter the path !!!!"
@@ -359,6 +359,36 @@ csjava() {
     fi
 }
 
+csall() {
+    if [ ! -z "$8" ]; then
+        find "$8" -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$7" ]; then
+        find "$7" -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$6" ]; then
+        find "$6" -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$5" ]; then
+        find "$5" -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$4" ]; then
+        find "$4" -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$3" ]; then
+        find "$3" -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$2" ]; then
+        find "$2" -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*.java" >> cscope.files
+    fi
+    if [ ! -z "$1" ]; then
+        find "$1" -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*.java" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+    else
+        echo ""
+        echo "Please enter the path !!!!"
+        echo ""
+    fi
+}
 
 csclear() {
     rm cscope* tags
