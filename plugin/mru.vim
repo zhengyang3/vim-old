@@ -667,6 +667,7 @@ function! s:MRU_Select_File_Cmd(opt) range
             let multi = 1
         endif
     endfor
+    TrinityUpdateWindow
 endfunction
 
 " MRU_Warn_Msg                          {{{1
@@ -798,7 +799,7 @@ function! s:MRU_Open_Window(...)
     nnoremap <buffer> <silent> u :MRU<CR>
     nnoremap <buffer> <silent> <2-LeftMouse>
                 \ :call <SID>MRU_Select_File_Cmd('edit,useopen')<CR>
-    nnoremap <buffer> <silent> q :close<CR>
+    nnoremap <buffer> <silent> q :close<CR><bar>:TrinityUpdateWindow<CR>
 
     " Restore the previous cpoptions settings
     let &cpoptions = old_cpoptions

@@ -409,6 +409,7 @@ function! s:Project(filename) " <<<
                 endif
                 wincmd =
             endif
+            TrinityToggleAll
         endif
     endfunction ">>>
     " s:VimDirListing(filter, padding, separator, filevariable, filecount, dirvariable, dircount) <<<
