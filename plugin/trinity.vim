@@ -97,7 +97,7 @@ let s:source_explorer_title  = "Source_Explorer"
 
 function! <SID>Trinity_InitTagList()
 
-    let tagbar_left=0
+    let tagbar_left=1
     let tagbar_autofocus=0
     let g:tagbar_width=40
     let tagbar_map_help = "&"
@@ -159,7 +159,7 @@ endfunction " }}}
 function! <SID>Trinity_InitNERDTree()
 
     let g:NERDTreeDirArrows=0
-    let g:NERDTreeWinPos = "left"
+    let g:NERDTreeWinPos = "right"
     let g:NERDTreeIgnore = ['\.o$','\.mod\.c$','\.mod\.o$','modules\.order','modules\.builtin']
     let g:NERDTreeWinSize=40
 

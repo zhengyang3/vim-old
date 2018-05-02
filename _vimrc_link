@@ -82,13 +82,13 @@ filetype plugin indent on
 "nmap <leader>e :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let g:NERDTreeDirArrows=0
-let g:NERDTreeWinPos=1
+let g:NERDTreeWinPos = "right"
 let g:NERDTreeIgnore = ['\.o$','\.mod\.c$','\.mod\.o$','modules\.order','modules\.builtin']
 let g:NERDTreeWinSize=40
 
 "tagbar need ctags, put ctags.exe in your intalled derectory ,not $PATH,If you are using Windows!!
 "nmap <leader>a :TagbarToggle<CR>
-let tagbar_left=0
+let tagbar_left=1
 let tagbar_autofocus=0
 let g:tagbar_width=40
 let tagbar_map_help = "&"
@@ -227,9 +227,9 @@ nmap <Leader>N <Plug>MarkAllClear
 
 
 
-let g:proj_window_width=35
-let g:proj_flags="ist"
-nmap <silent> <Leader>e <Plug>ToggleProject
+let g:proj_window_width=95
+let g:proj_flags="cist"
+"nmap <silent> <Leader>w <Plug>ToggleProject
 
 
 "Jump to the position last time you quit
@@ -314,7 +314,7 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 
-function! ToggleProjectAndTagbar()
+function! ToggleProjectOrIdeByTurns()
     "let w:jumpbacktohere = 1
 
     " Detect which plugins are open
@@ -347,12 +347,12 @@ function! ToggleProjectAndTagbar()
             wincmd p
         endif
         unlet g:proj_mywindow
-        TagbarOpen
+        TrinityToggleAll
     elseif tagbar_open
-        TagbarClose
+        TrinityToggleAll
         Project
     else
-        Project
+        TrinityToggleAll
     endif
 
     " Jump back to the original window
@@ -364,7 +364,7 @@ function! ToggleProjectAndTagbar()
   "      endif
   "  endfor
 endfunction
-"nnoremap <leader>y :call ToggleProjectAndTagbar()<CR>
+nnoremap <leader>a :call ToggleProjectOrIdeByTurns()<CR>
 
 function! ToggleNERDTreeOrTagbarByTurns()
     let w:jumpbacktohere = 1
@@ -400,7 +400,7 @@ function! ToggleNERDTreeOrTagbarByTurns()
         endif
     endfor
 endfunction
-nnoremap <leader>a :call ToggleNERDTreeOrTagbarByTurns()<CR>
+"nnoremap <leader>a :call ToggleNERDTreeOrTagbarByTurns()<CR>
 
 let g:SrcExpl_winHeight = 8 
 
@@ -411,7 +411,7 @@ let g:SrcExpl_refreshTime = 100
 let g:SrcExpl_jumpKey = "<ENTER>" 
 
 " // Set "Space" key for back from the definition context 
-"let g:SrcExpl_gobackKey = "<SPACE>" 
+let g:SrcExpl_gobackKey = "<SPACE>" 
 
 " // In order to avoid conflicts, the Source Explorer should know what plugins
 " // except itself are using buffers. And you need add their buffer names into
@@ -435,4 +435,3 @@ let g:SrcExpl_isUpdateTags = 0
 " // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to 
 " // create/update the tags file 
 let g:SrcExpl_updateTagsCmd = "ctags -R ." 
-
