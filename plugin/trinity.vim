@@ -119,11 +119,12 @@ function! <SID>Trinity_InitSourceExplorer()
         let g:SrcExpl_winHeight = 8
     endif
     " // Set 1 ms for refreshing the Source Explorer                               "
-    let g:SrcExpl_refreshTime = 100 
+    let g:SrcExpl_refreshTime = 1000
     " // Set "Enter" key to jump into the exact definition context                 "
     let g:SrcExpl_jumpKey = "<ENTER>"
     " // Set "Space" key for back from the definition context                      "
-    let g:SrcExpl_gobackKey = "<SPACE>"
+    "let g:SrcExpl_gobackKey = "<SPACE>"
+    let g:SrcExpl_gobackKey = "<F6>"
     " // In order to Avoid conflicts, the Source Explorer should know what plugins "
     " // are using buffers. And you need add their bufname into the list below     "
     " // according to the command ":buffers!"                                      "
