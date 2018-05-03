@@ -289,7 +289,9 @@ csc() {
         find "$2" -name "*.h" -o -name "*.c" >> cscope.files
     fi
     if [ ! -z "$1" ]; then
-        find "$1" -name "*.h" -o -name "*.c" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+        find "$1" -name "*.h" -o -name "*.c" >> cscope.files
+        sed -i 's/^\.\///' cscope.files
+        cscope -bq ; ctags --sort=foldcase -L cscope.files
     else
         echo ""
         echo "Please enter the path !!!!"
@@ -320,7 +322,9 @@ cscpp() {
         find "$2" -name "*.h" -o -name "*.cpp" >> cscope.files
     fi
     if [ ! -z "$1" ]; then
-        find "$1" -name "*.h" -o -name "*.cpp" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+        find "$1" -name "*.h" -o -name "*.cpp" >> cscope.files
+        sed -i 's/^\.\///' cscope.files
+        cscope -bq ; ctags --sort=foldcase -L cscope.files
     else
         echo ""
         echo "Please enter the path !!!!"
@@ -351,7 +355,9 @@ csjava() {
         find "$2" -name "*.java" >> cscope.files
     fi
     if [ ! -z "$1" ]; then
-        find "$1" -name "*.java" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+        find "$1" -name "*.java" >> cscope.files
+        sed -i 's/^\.\///' cscope.files
+        cscope -bq ; ctags --sort=foldcase -L cscope.files
     else
         echo ""
         echo "Please enter the path !!!!"
@@ -382,7 +388,9 @@ csall() {
         find "$2" -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*.java" >> cscope.files
     fi
     if [ ! -z "$1" ]; then
-        find "$1" -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*.java" >> cscope.files ; cscope -bq ; ctags -L cscope.files
+        find "$1" -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*.java" >> cscope.files
+        sed -i 's/^\.\///' cscope.files
+        cscope -bq ; ctags --sort=foldcase -L cscope.files
     else
         echo ""
         echo "Please enter the path !!!!"
