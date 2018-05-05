@@ -73,7 +73,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 
-nmap <leader>r :MRU<CR>
+nmap <silent> <leader>r :MRU<CR>
 
 execute pathogen#infect()
 syntax on
