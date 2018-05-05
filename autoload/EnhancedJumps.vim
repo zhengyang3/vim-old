@@ -263,7 +263,7 @@ function! s:EchoFollowingMessage( followingJump, jumpDirection, filterName, file
 	call s:Echo(a:fileJumpMessages, printf('Next%s jump position is invalid', a:filterName))
     elseif s:IsJumpInCurrentBuffer(l:following)
 	let l:header = printf('next%s: %d,%d ', a:filterName, l:following.lnum, l:following.col)
-	call s:Echo(a:fileJumpMessages, l:header)
+	silent call s:Echo(a:fileJumpMessages, l:header)
 	let l:reservedColumns = len(l:header)	" l:header is printable ASCII-only, so can use len() for text width.
 	if len(a:fileJumpMessages) == 1 && &cmdheight == 1
 	    let l:reservedColumns += ingo#compat#strdisplaywidth(a:fileJumpMessages[0], l:reservedColumns) + 1  " The captured jump message may contain unprintable or non-ASCII characters; use strdisplaywidth(); it starts after the header, so consider its width, too.
@@ -272,7 +272,7 @@ function! s:EchoFollowingMessage( followingJump, jumpDirection, filterName, file
 	echon ingo#avoidprompt#Truncate(getline(l:following.lnum), l:reservedColumns)
 	echohl None
     else
-	call s:Echo(a:fileJumpMessages, printf('next%s: %s', a:filterName, s:BufferName(l:following.text)))
+	silent call s:Echo(a:fileJumpMessages, printf('next%s: %s', a:filterName, s:BufferName(l:following.text)))
     endif
 endfunction
 function! EnhancedJumps#Jump( isNewer, filter )
@@ -312,7 +312,7 @@ function! EnhancedJumps#Jump( isNewer, filter )
 	    " of the next jump position, the jump command is executed first and
 	    " the indication only printed if the jump didn't cause an error.
 	    if s:DoJump(l:jumpCount, a:isNewer)
-		call s:EchoFollowingMessage(l:followingJump, l:jumpDirection, l:filterName, '')
+		silent call s:EchoFollowingMessage(l:followingJump, l:jumpDirection, l:filterName, '')
 	    endif
 	else
 	    " The next jump would move to another buffer. Stop and notify first,

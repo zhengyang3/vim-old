@@ -134,9 +134,9 @@ map go <C-w>o
 
 "modify just for EnhancedJumps,the key "{" and "g;" are very convenient
 "nmap ( g<C-o><bar>zz
-nmap ( <Plug>EnhancedJumpsLocalOlder<bar>zz
+nmap <silent> ( <Plug>EnhancedJumpsLocalOlder<bar>zz
 "nmap ) g<C-i><bar>zz
-nmap ) <Plug>EnhancedJumpsLocalNewer<bar>zz
+nmap <silent> ) <Plug>EnhancedJumpsLocalNewer<bar>zz
 
 nmap zb :BufSurfBack<cr>
 nmap zn :BufSurfForward<cr>
@@ -366,7 +366,7 @@ function! ToggleProjectOrIdeByTurns()
   "      endif
   "  endfor
 endfunction
-nnoremap <leader>a :call ToggleProjectOrIdeByTurns()<CR>
+nnoremap <silent> <leader>a :call ToggleProjectOrIdeByTurns()<CR>
 
 function! ToggleNERDTreeOrTagbarByTurns()
     let w:jumpbacktohere = 1
