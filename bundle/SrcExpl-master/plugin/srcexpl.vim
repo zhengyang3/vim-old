@@ -1009,10 +1009,10 @@ endfunction " }}}
 
 function! <SID>SrcExpl_MatchExpr()
 
-    call search("$", "b")
+    keepjumps call search("$", "b")
     let s:SrcExpl_symbol = substitute(s:SrcExpl_symbol,
         \ '\\', '\\\\', '')
-    call search('\<' . s:SrcExpl_symbol . '\>' . '\C')
+    keepjumps call search('\<' . s:SrcExpl_symbol . '\>' . '\C')
 
 endfunction " }}}
 
@@ -1213,7 +1213,7 @@ function! <SID>SrcExpl_GoDecl(expr)
     let l:oldcol = col(".")
 
     " Try to search the local declaration
-    if searchdecl(a:expr, 0, 1) != 0
+    exe 'keepjumps '.'if searchdecl(a:expr, 0, 1) != 0'
         " Search failed
         return -1
     endif
