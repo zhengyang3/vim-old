@@ -119,7 +119,7 @@ function! <SID>Trinity_InitSourceExplorer()
         let g:SrcExpl_winHeight = 8
     endif
     " // Set 1 ms for refreshing the Source Explorer                               "
-    let g:SrcExpl_refreshTime = 1000
+    let g:SrcExpl_refreshTime = 100
     " // Set "Enter" key to jump into the exact definition context                 "
     let g:SrcExpl_jumpKey = "<ENTER>"
     " // Set "Space" key for back from the definition context                      "
