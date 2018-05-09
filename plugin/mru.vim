@@ -668,6 +668,7 @@ function! s:MRU_Select_File_Cmd(opt) range
         endif
     endfor
     TrinityUpdateWindow
+    exe "normal! " . "zz"
 endfunction
 
 " MRU_Warn_Msg                          {{{1
