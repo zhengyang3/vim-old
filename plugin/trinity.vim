@@ -133,7 +133,8 @@ function! <SID>Trinity_InitSourceExplorer()
                 \ ".vimprojects", 
                 \ "__MRU_Files__", 
                 \ "__Tagbar__", 
-                \ "_NERD_tree_" 
+                \ "_NERD_tree_", 
+                \ "[Scratch]" 
                 \ ] 
     " // Enable/Disable the local definition searching, and note that this is not  "
     " // guaranteed to work, the Source Explorer doesn't check the syntax for now. "
