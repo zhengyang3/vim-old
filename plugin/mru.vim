@@ -667,8 +667,8 @@ function! s:MRU_Select_File_Cmd(opt) range
             let multi = 1
         endif
     endfor
-    TrinityUpdateWindow
-    exe "normal! " . "zz"
+"    TrinityUpdateWindow
+"    exe "normal! " . "zz"
 endfunction
 
 " MRU_Warn_Msg                          {{{1

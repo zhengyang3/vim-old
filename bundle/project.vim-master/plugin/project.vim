@@ -409,7 +409,9 @@ function! s:Project(filename) " <<<
                 endif
                 wincmd =
             endif
-            TrinityToggleAll
+            NERDTree
+            TagbarOpen
+            silent! exe "wincmd h"
         endif
     endfunction ">>>
     " s:VimDirListing(filter, padding, separator, filevariable, filecount, dirvariable, dircount) <<<
