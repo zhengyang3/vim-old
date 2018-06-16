@@ -73,7 +73,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 
-nmap <silent> <leader>r :MRU<CR>
+"nmap <silent> <leader>r :MRU<CR>
 
 execute pathogen#infect()
 syntax on
@@ -359,7 +359,9 @@ function! <SID>ToggleProjectOrIdeByTurns()
         NERDTreeClose
         Project
     else
-        Project
+        NERDTree
+        silent! exe "wincmd h"
+        TagbarOpen
     endif
 
     " Jump back to the original window
@@ -408,3 +410,8 @@ function! ToggleNERDTreeOrTagbarByTurns()
     endfor
 endfunction
 "nnoremap <leader>a :call ToggleNERDTreeOrTagbarByTurns()<CR>
+
+let g:Lf_CommandMap = {'<C-X>': ['<C-O>'], '<C-]>': ['<C-I>']}
+let g:Lf_ShortcutF = '<leader>e'
+nnoremap <leader>r :LeaderfMru<CR>
+
