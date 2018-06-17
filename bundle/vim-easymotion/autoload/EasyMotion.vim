@@ -1104,7 +1104,7 @@ function! s:PromptUser(groups) "{{{
         redraw "}}}
 
         " Get target character {{{
-        call s:Prompt('Target key')
+        silent call s:Prompt('Target key')
         let char = s:GetChar()
         "}}}
 
@@ -1547,7 +1547,7 @@ function! s:EasyMotion(regexp, direction, visualmode, is_inclusive, ...) " {{{
                                     \ 'hlsearch', 'n')
         endif "}}}
 
-        call s:Message('Jumping to [' . coords[0] . ', ' . coords[1] . ']')
+        silent call s:Message('Jumping to [' . coords[0] . ', ' . coords[1] . ']')
         let s:EasyMotion_is_cancelled = 0 " Success
         "}}}
     catch /^EasyMotion:.*/
