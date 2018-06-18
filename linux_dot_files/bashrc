@@ -404,11 +404,13 @@ csclear() {
 
 lsh(){
         echo "----------------------------------------ls help------------------------------"
-        echo "                     ll -tr                            :sort by mod time, -r is reverse direction"
-        echo '                     ls -I "*.c" -I "*.h"              :list files ignore .c and .h files '
-        echo "                     ls -d  */                         :-d is not show directory content; */ is just list directory,not file!"
-        echo "                     ll -d  \.*                        :just list files started with . and * means include file and directory"
-        echo "                     ll -d  \.*/                       :just list files started with . but just include directory"
+        echo "           ll -tr                                                    :sort by mod time, -r is reverse direction"
+        echo '           ls --ignore={"*.c","*.h"}                                 :list files ignore .c and .h files '
+        echo '                eg:   rm -rf `ls --ignore={"*.c","*.h"}`                        :delete the files         '
+        echo '                      ls --ignore={"*.c","*.h"}|xargs -i rm -rf {}              :delete the files         '
+        echo "           ls -d  */                                                 :-d is not show directory content; */ is just list directory,not file!"
+        echo "           ll -d  \.*                                                :just list files started with . and * means include file and directory"
+        echo "           ll -d  \.*/                                               :just list files started with . but just include directory"
         echo "-----------------------------------------------------------------------------"
 }
 
