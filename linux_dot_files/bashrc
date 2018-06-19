@@ -389,8 +389,8 @@ csall() {
     fi
     if [ ! -z "$1" ]; then
         find "$1" -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*.java" >> cscope.files
-        sed -i 's/^\.\///' cscope.files
-        cscope -bq ; ctags --sort=foldcase -L cscope.files
+    #    sed -i 's/^\.\///' cscope.files
+         cscope -bq ; ctags -L cscope.files
     else
         echo ""
         echo "Please enter the path !!!!"

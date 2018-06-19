@@ -180,7 +180,7 @@ if has("cscope")
 "    set cscopequickfix=s-,c-,d-,i-,t-,e- 
     set cscopetag 
     "0 cscope fist; 1 ctags first
-    set csto=1 
+    set csto=1
     if filereadable("cscope.out")   
         cs add cscope.out   
     "else search cscope.out elsewhere   
@@ -226,8 +226,8 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 "Mark plugin config
 nmap  <Leader>s <Plug>MarkRegex
-nmap <Leader>M <Plug>MarkToggle 
-nmap <Leader>N <Plug>MarkAllClear 
+nmap <Leader>M <Plug>MarkToggle
+nmap <Leader>N <Plug>MarkAllClear
 
 
 
