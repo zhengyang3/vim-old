@@ -414,3 +414,4 @@ endfunction
 let g:Lf_CommandMap = {'<C-X>': ['<C-O>'], '<C-]>': ['<C-I>']}
 let g:Lf_ShortcutF = '<leader>e'
 nnoremap <leader>r :LeaderfMru<CR>
+nnoremap <leader>v :LeaderfBuffer<CR>
