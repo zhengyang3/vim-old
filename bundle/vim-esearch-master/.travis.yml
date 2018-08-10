@@ -1,0 +1,23 @@
+sudo: required
+dist: trusty
+os:
+  - linux
+  # - osx
+
+env:
+  - DISPLAY=":99.0"
+
+language: ruby
+rvm:
+  - 2.2.2
+
+cache:
+  bundler: true
+  directories:
+    - $HOME/.rvm
+
+jobs:
+  include:
+    - script: bash .ci/before_script.sh && rake ci_system
+    - script: bash .ci/before_script.sh && rake ci_vim8
+    - script: bash .ci/before_script.sh && rake ci_vimproc

@@ -415,3 +415,6 @@ let g:Lf_CommandMap = {'<C-X>': ['<C-O>'], '<C-]>': ['<C-I>']}
 let g:Lf_ShortcutF = '<leader>e'
 nnoremap <leader>r :LeaderfMru<CR>
 nnoremap <leader>v :LeaderfBuffer<CR>
+
+let g:esearch#out#win#open = ''
+hi ESearchMatch ctermfg=red ctermbg=white guifg=#000000 guibg=#E6E6FA
