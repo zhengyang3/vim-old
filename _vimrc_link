@@ -417,4 +417,4 @@ nnoremap <leader>r :LeaderfMru<CR>
 nnoremap <leader>v :LeaderfBuffer<CR>
 
 let g:esearch#out#win#open = ''
-hi ESearchMatch ctermfg=red ctermbg=white guifg=#000000 guibg=#E6E6FA
+hi ESearchMatch ctermfg=black ctermbg=yellow guifg=#000000 guibg=#E6E6FA
