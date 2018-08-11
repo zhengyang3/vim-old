@@ -417,4 +417,11 @@ nnoremap <leader>r :LeaderfMru<CR>
 nnoremap <leader>v :LeaderfBuffer<CR>
 
 let g:esearch#out#win#open = ''
+let g:esearch = {
+            \ 'adapter':    'ag',
+            \ 'backend':    'vim8',
+            \ 'out':        'win',
+            \ 'batch_size': 1000,
+            \ 'use':        ['visual', 'hlsearch', 'last'],
+            \}
 hi ESearchMatch ctermfg=black ctermbg=yellow guifg=#000000 guibg=#E6E6FA
