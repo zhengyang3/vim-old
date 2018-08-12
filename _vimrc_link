@@ -416,7 +416,7 @@ let g:Lf_ShortcutF = '<leader>e'
 nnoremap <leader>r :LeaderfMru<CR>
 nnoremap <leader>v :LeaderfBuffer<CR>
 
-let g:esearch#out#win#open = ''
+let g:esearch#out#win#open = 'open'
 let g:esearch = {
             \ 'adapter':    'ag',
             \ 'backend':    'vim8',
