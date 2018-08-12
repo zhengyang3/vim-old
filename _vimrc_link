@@ -424,5 +424,5 @@ let g:esearch = {
             \ 'batch_size': 1000,
             \ 'use':        ['visual', 'hlsearch', 'last'],
             \}
-hi ESearchMatch ctermfg=252 ctermbg=22 guifg=#000000 guibg=#E6E6FA
+hi ESearchMatch ctermfg=black ctermbg=yellow guifg=#000000 guibg=#E6E6FA
 hi esearchFName ctermfg=107 ctermbg=233 guifg=#000000 guibg=#E6E6FA
