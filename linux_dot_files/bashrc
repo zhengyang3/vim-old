@@ -109,14 +109,7 @@ fi
 set -o vi
 bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'
-
-export JAVA_HOME=/usr/lib/jvm/jdk1.6.0_45
-export JRE_HOME=$JAVA_HOME/jre
-export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
-export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 export EDITOR=vim
-
-
 
 # http://www.geocities.com/h2428/petar/bash_acd.htm
 #
