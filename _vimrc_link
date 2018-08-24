@@ -97,6 +97,15 @@ let tagbar_map_help = "&"
 let tagbar_map_openfold = "zo"
 let tagbar_map_closefold = "zc"
 
+" Insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
+
 
 map z <Nop>
 map zj <C-W>j
