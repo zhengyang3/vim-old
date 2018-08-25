@@ -1,0 +1,80 @@
+﻿
+"ideavimrc for intellij idea
+set nu
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch 
+
+"The two lines set tab convert to 4 spaces automatically!
+set tabstop=4
+set expandtab
+"set auto indent and indent 4 space
+set smartindent
+set shiftwidth=4
+set softtabstop=4
+
+
+syntax on
+filetype plugin indent on
+
+let mapleader = ","
+let g:mapleader = ","
+
+nmap <space> <C-d>
+nmap B <C-u>
+
+" Insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
+
+map z <Nop>
+map zj <C-W>j
+map zk <C-W>k
+map zh <C-W>h
+map zl <C-W>l
+map zu [{
+"Tips: use zr with zm; use zo/zv with zc
+"zr:reduce level;   zo:open   zc:close 
+nnoremap zz zz
+nnoremap z- z-
+nnoremap z<CR> z<CR>
+nmap yh y^
+nmap yl y$
+nmap dh d^
+nmap dl d$
+map gh ^
+map gl $
+map gn *
+map gN #
+
+map K 2<C-y>
+map J 2<C-e>
+nnoremap <leader>J J
+
+nmap <leader>q :qa!<cr>
+nmap q <Nop>
+
+nmap f :action KJumpAction.Word0<cr>
+noremap <leader>a :action GotoAction<CR>
+noremap <leader>c :action GotoClass<CR>
+"noremap ( :action Back<CR>
+"noremap ) :action Forward<CR>
+noremap ( :action VimBack<CR>
+noremap ) :action VimForward<CR>
+
+noremap <leader>v :action VimVisualToggleBlockMode<CR>
+noremap <leader>f :action FileStructurePopup<CR>
+
+noremap <leader>d :action GotoDeclaration<CR>
+noremap <leader>i :action GotoImplementation<CR>
+noremap <leader>s :action GotoSuperMethod<CR>
+noremap <leader>t :action GotoTest<CR>
+ 
+"noremap <leader>m :action EditorPopupMenu<CR>
+noremap <leader>p :action ShowFilePath<CR>
