@@ -33,8 +33,11 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-d> <Delete>
 
-nnoremap <C-h> gT
-nnoremap <C-l> gt
+"nnoremap <C-h> gT
+"nnoremap <C-l> gt
+
+nnoremap H gT
+nnoremap L gt
 
 map z <Nop>
 map zj <C-W>j
@@ -60,8 +63,10 @@ map K 2<C-y>
 map J 2<C-e>
 nnoremap <leader>J J
 
-nmap <leader>q :qa!<cr>
+"nmap <leader>q :q!<cr>
+nmap X :q!<cr>
 nmap q <Nop>
+set iskeyword+=-
 
 nmap f :action KJumpAction.Word0<cr>
 noremap <leader>a :action GotoAction<CR>
@@ -70,14 +75,23 @@ noremap <leader>c :action GotoClass<CR>
 "noremap ) :action Forward<CR>
 noremap ( :action VimBack<CR>
 noremap ) :action VimForward<CR>
+nnoremap / :action Find<CR>
 
 noremap <leader>v :action VimVisualToggleBlockMode<CR>
-noremap <leader>f :action FileStructurePopup<CR>
+noremap <leader>s :action FileStructurePopup<CR>
 
+noremap <leader>r :action RecentChangedFiles<CR>
+noremap <leader>e :action RecentFiles<CR>
 noremap <leader>d :action GotoDeclaration<CR>
 noremap <leader>i :action GotoImplementation<CR>
-noremap <leader>s :action GotoSuperMethod<CR>
+noremap <leader>m :action GotoSuperMethod<CR>
 noremap <leader>t :action GotoTest<CR>
  
 "noremap <leader>m :action EditorPopupMenu<CR>
 noremap <leader>p :action ShowFilePath<CR>
+
+" tips:
+"   :actionlist [pattern]
+"       Find IDE actions by name pattern
+"   :action {name}
+"       Execute an action named NAME
