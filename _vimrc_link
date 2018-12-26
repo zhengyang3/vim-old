@@ -73,7 +73,11 @@ let mapleader = ","
 let g:mapleader = ","
 
 
-"nmap <silent> <leader>r :MRU<CR>
+nmap <silent> <leader>r :MRU<CR>
+
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'LeaderF-1.13')
 
 execute pathogen#infect()
 syntax on
@@ -420,10 +424,11 @@ function! ToggleNERDTreeOrTagbarByTurns()
 endfunction
 "nnoremap <leader>a :call ToggleNERDTreeOrTagbarByTurns()<CR>
 
-let g:Lf_CommandMap = {'<C-X>': ['<C-O>'], '<C-]>': ['<C-I>']}
-let g:Lf_ShortcutF = '<leader>e'
-nnoremap <leader>r :LeaderfMru<CR>
-nnoremap <leader>v :LeaderfBuffer<CR>
+"LeaderF configure
+"let g:Lf_CommandMap = {'<C-X>': ['<C-O>'], '<C-]>': ['<C-I>']}
+"let g:Lf_ShortcutF = '<leader>e'
+"nnoremap <leader>r :LeaderfMru<CR>
+"nnoremap <leader>v :LeaderfBuffer<CR>
 
 let g:esearch#out#win#open = 'open'
 let g:esearch = {
