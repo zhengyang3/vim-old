@@ -448,3 +448,65 @@ source ~/.bashrc_marks
 vimlock() {
 	vim -c 'cmap wq <NOP>' -c 'cmap q <NOP>' -c 'cmap qa! <NOP>'
 }
+
+unalias rm 2>/dev/null
+real_rm=/bin/rm
+rm_opts=""
+
+function confirm {
+  echo -n "Do you want to continue (Y/N)? "
+  read v
+  v=$(echo $v|tr '[a-z]' '[A-Z]')
+  if [[ "$v" == "Y" ]]; then
+    return 0
+  elif [[ "$v" == "N" ]]; then
+    return 1
+  else
+    confirm
+  fi
+}
+
+function cm {
+
+  if [ $# -lt 1 ]; then
+      echo "please input path!!"
+      return
+  fi
+
+  if [ $# -lt 2 ]; then
+      echo "please input the files you want to delete!!"
+      return
+  fi
+
+  if [[ $1 == '.' ]]; then
+      echo "You are in: $(pwd)"
+      confirm
+    if [ $? -eq 1 ]; then
+        return
+    fi
+  fi
+
+  #${@:2} all parameters after the 1st parameter
+  cd $1 && /bin/rm -rf ${@:2}
+
+}
+
+
+function rm {
+
+  echo "Don't use rm, please use cm instead!!"
+
+  #if [ $# -gt 2 ]; then
+  #  echo "WARNING: You have passed a list of files and directories that is $# entries long!  Is this what you intended?"
+  #  echo "Here is the list of files:"
+  #  echo "$@"
+  #  confirm
+  #  if [ $? -eq 0 ]; then
+  #    $real_rm $rm_opts $@
+  #  fi
+  #else
+  #  $real_rm $rm_opts $@
+  #fi
+
+}
+
