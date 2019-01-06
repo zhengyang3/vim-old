@@ -450,8 +450,15 @@ vimlock() {
 }
 
 unalias rm 2>/dev/null
-real_rm=/bin/rm
 rm_opts=""
+
+if [ -x /usr/local/bin/safe-rm ]; then
+    real_rm=/usr/local/bin/safe-rm
+elif [ -x ~/local/bin/safe-rm ]; then
+    real_rm=~/local/bin/safe-rm
+else
+    real_rm=/bin/rm
+fi
 
 function confirm {
   echo -n "Do you want to continue (Y/N)? "
@@ -487,7 +494,7 @@ function cm {
   fi
 
   #${@:2} all parameters after the 1st parameter
-  cd $1 && /bin/rm -rf ${@:2}
+  cd $1 && $real_rm -rf ${@:2}
 
 }
 

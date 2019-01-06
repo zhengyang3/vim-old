@@ -1,0 +1,16 @@
+
+1: You have sodo permission:
+
+        sudo cp safe-rm /usr/local/bin/
+
+        sudo touch /etc/safe-rm.conf
+
+        touch ~/.config/safe-rm
+
+
+2: You are a normal user, no root privileges
+
+        cp safe-rm ~/local/bin/
+
+        touch ~/.config/safe-rm
+
