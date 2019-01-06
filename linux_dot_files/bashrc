@@ -501,7 +501,10 @@ function cm {
 
 function rm {
 
+  echo ""
   echo "Don't use rm, please use cm instead!!"
+  echo "Or add the prefix to use it: /bin/rm "
+  echo ""
 
   #if [ $# -gt 2 ]; then
   #  echo "WARNING: You have passed a list of files and directories that is $# entries long!  Is this what you intended?"
