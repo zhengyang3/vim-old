@@ -372,7 +372,7 @@ function! <SID>ToggleProjectOrIdeByTurns()
     elseif tagbar_open
         TagbarClose
         NERDTreeClose
-        Project
+        "Project
     else
         NERDTree
         silent! exe "wincmd h"
