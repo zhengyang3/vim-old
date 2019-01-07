@@ -502,7 +502,7 @@ function dm {
 function rm {
 
   echo ""
-  echo "Don't use rm, please use cm instead!!"
+  echo "Don't use rm, please use dm instead!!"
   echo "Or add the prefix to use it: /bin/rm "
   echo ""
 
