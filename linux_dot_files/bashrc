@@ -473,7 +473,7 @@ function confirm {
   fi
 }
 
-function cm {
+function dm {
 
   if [ $# -lt 1 ]; then
       echo "please input path!!"
