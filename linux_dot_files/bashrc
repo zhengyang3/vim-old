@@ -500,12 +500,10 @@ vimlock() {
 
 
 function rm {
-
   echo ""
   echo "Don't use rm, please use dm instead!!"
   echo "Or add the prefix to use it: /bin/rm "
   echo ""
-
   #if [ $# -gt 2 ]; then
   #  echo "WARNING: You have passed a list of files and directories that is $# entries long!  Is this what you intended?"
   #  echo "Here is the list of files:"
@@ -517,6 +515,6 @@ function rm {
   #else
   #  $real_rm $rm_opts $@
   #fi
-
 }
 
+export -f rm
