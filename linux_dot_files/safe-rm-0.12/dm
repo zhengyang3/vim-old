@@ -1,0 +1,50 @@
+#!/bin/bash
+
+unalias rm 2>/dev/null
+rm_opts=""
+
+if [ -x /usr/local/bin/safe-rm ]; then
+    real_rm=/usr/local/bin/safe-rm
+elif [ -x ~/local/bin/safe-rm ]; then
+    real_rm=~/local/bin/safe-rm
+else
+    real_rm=/bin/rm
+fi
+
+function confirm {
+  echo -n "Do you want to continue (Y/N)? "
+  read v
+  v=$(echo $v|tr '[a-z]' '[A-Z]')
+  if [[ "$v" == "Y" ]]; then
+    return 0
+  elif [[ "$v" == "N" ]]; then
+    return 1
+  else
+    confirm
+  fi
+}
+
+
+if [ $# -lt 1 ]; then
+    echo "please input path!!"
+    exit
+fi
+
+if [ $# -lt 2 ]; then
+    echo "please input the files you want to delete!!"
+    exit
+fi
+
+if [[ $1 == '.' ]]; then
+    echo "You are in: $(pwd)"
+    confirm
+    if [ $? -eq 1 ]; then
+        exit
+    fi
+fi
+
+#${@:2} all parameters after the 1st parameter
+cd $1 && $real_rm -rf ${@:2}
+
+
+

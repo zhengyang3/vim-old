@@ -1,7 +1,9 @@
 
 1: You have sodo permission:
 
-        sudo cp safe-rm /usr/local/bin/
+        sudo cp safe-rm /usr/local/bin/safe-rm
+        sudo cp safe-rm /usr/local/bin/rm
+        sudo cp dm /usr/local/bin/dm
 
         sudo touch /etc/safe-rm.conf
 
@@ -11,6 +13,7 @@
 2: You are a normal user, no root privileges
 
         cp safe-rm ~/local/bin/
+        cp dm ~/local/bin/
 
         touch ~/.config/safe-rm
 
