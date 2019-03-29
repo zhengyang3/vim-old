@@ -56,9 +56,9 @@ set noswapfile
 " Identify Chinese Code: 1: Xshell/SecureCRT set UTF-8 must
 "                        2: vim set fileencodings
 "                        3: if you want to use english but can identify Chinese code , set LANG=en_US.UTF-8 in bash.bashrc
+set encoding=utf-8
+set termencoding=utf-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-"set termencoding=utf-8
-"set encoding=utf-8
 
 "nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 nmap <space> <C-d>
