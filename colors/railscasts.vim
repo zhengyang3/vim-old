@@ -42,7 +42,7 @@ let s:pallete = {
       \ 'orange':       {'gui': '#df0000', 'cterm': 160},
       \ 'darkpink':     {'gui': '#df5f5f', 'cterm': 167},
       \ 'darkpink_1':   {'gui': '#df5f87', 'cterm': 168},
-      \ 'darkyellow':   {'gui': '#dfaf5f', 'cterm': 179},
+      \ 'darkyellow':   {'gui': '#5fafaf', 'cterm': 73},
       \ 'lightpink':    {'gui': '#dfdfff', 'cterm': 189},
       \ 'lightorange':  {'gui': '#ff8700', 'cterm': 208},
       \ 'lightpink_1':  {'gui': '#ffaf87', 'cterm': 216},

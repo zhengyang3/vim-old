@@ -516,5 +516,3 @@ function rm {
   #  $real_rm $rm_opts $@
   #fi
 }
-
-export -f rm
