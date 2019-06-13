@@ -77,7 +77,16 @@ nmap <silent> <leader>r :MRU<CR>
 
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'LeaderF-1.13')
+"call add(g:pathogen_disabled, 'LeaderF-1.13')
+
+"Leaderf prerequisites:
+"   python >2.7 or >3.1
+"LeaderF configure
+let g:Lf_CommandMap = {'<C-X>': ['<C-O>'], '<C-]>': ['<C-I>']}
+let g:Lf_ShortcutF = '<leader>e'
+"nnoremap <leader>r :LeaderfMru<CR>
+"nnoremap <leader>v :LeaderfBuffer<CR>
+
 
 execute pathogen#infect()
 syntax on
@@ -426,14 +435,8 @@ function! ToggleNERDTreeOrTagbarByTurns()
 endfunction
 "nnoremap <leader>a :call ToggleNERDTreeOrTagbarByTurns()<CR>
 
-"LeaderF configure
-"let g:Lf_CommandMap = {'<C-X>': ['<C-O>'], '<C-]>': ['<C-I>']}
-"let g:Lf_ShortcutF = '<leader>e'
-"nnoremap <leader>r :LeaderfMru<CR>
-"nnoremap <leader>v :LeaderfBuffer<CR>
 
 "esearch prerequisites:
-"    python >2.7 or >3.7
 "    ag (the_silver_searcher) is installed
 "esearch simple tutorial:
 "    <leader>ff  or  <leader>fw
