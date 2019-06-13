@@ -434,7 +434,7 @@ endfunction
 
 "esearch prerequisites:
 "    python >2.7 or >3.7
-"    ag is installed
+"    ag (the_silver_searcher) is installed
 "esearch simple tutorial:
 "    <leader>ff  or  <leader>fw
 let g:esearch#out#win#open = 'open'
