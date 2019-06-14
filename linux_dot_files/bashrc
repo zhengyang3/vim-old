@@ -443,7 +443,7 @@ teeh(){
         echo ""
         echo "-----------------------------------------------------------------------------"
 }
-source ~/.bashrc_marks
+#source ~/.bashrc_marks
 
 vimlock() {
 	vim -c 'cmap wq <NOP>' -c 'cmap q <NOP>' -c 'cmap qa! <NOP>'
