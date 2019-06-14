@@ -80,6 +80,7 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'LeaderF-1.13')
 
 "Leaderf prerequisites:
+"   LeaderF requires Vim 7.4.330+
 "   python >2.7 or >3.1
 "LeaderF configure
 let g:Lf_CommandMap = {'<C-X>': ['<C-O>'], '<C-]>': ['<C-I>']}
