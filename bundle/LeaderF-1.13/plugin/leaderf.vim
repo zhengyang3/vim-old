@@ -22,35 +22,37 @@ if !exists("g:Lf_PythonVersion")
     if has("python3")
         let g:Lf_PythonVersion = 3
         let g:Lf_py = "py3 "
-    elseif has("python")
-        let g:Lf_PythonVersion = 2
-        let g:Lf_py = "py "
+"    elseif has("python")
+"        let g:Lf_PythonVersion = 2
+"        let g:Lf_py = "py "
     else
+        finish
         echohl Error
         echo "Error: LeaderF requires vim compiled with +python or +python3"
         echohl None
         finish
     endif
 else
-    if g:Lf_PythonVersion == 2
-        if has("python")
-            let g:Lf_py = "py "
-        else
-            echohl Error
-            echo 'LeaderF Error: has("python") == 0'
-            echohl None
-            finish
-        endif
+    "if g:Lf_PythonVersion == 2
+    "    if has("python")
+    "        let g:Lf_py = "py "
+    "    else
+    "        echohl Error
+    "        echo 'LeaderF Error: has("python") == 0'
+    "        echohl None
+    "        finish
+    "    endif
+    "else
+    if has("python3")
+        let g:Lf_py = "py3 "
     else
-        if has("python3")
-            let g:Lf_py = "py3 "
-        else
-            echohl Error
-            echo 'LeaderF Error: has("python3") == 0'
-            echohl None
-            finish
-        endif
+        finish
+        echohl Error
+        echo 'LeaderF Error: has("python3") == 0'
+        echohl None
+        finish
     endif
+    "endif
 endif
 
 function! s:InitVar(var, value)
