@@ -6,7 +6,7 @@ ssh-keygen -t rsa -C "zhengyang3@qq.com"
 
 cat ~/.ssh/id_rsa.pub
 # xshell can identify long line, so you needn't to use xclip, 
-# you just use mouse to select the line, that's so nice! enjoy it!  
+# you just use mouse to select the line to copy, that's so nice! enjoy it!  
 
 
 # Note：
