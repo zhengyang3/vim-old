@@ -81,7 +81,7 @@ let g:pathogen_disabled = []
 
 "Leaderf prerequisites:
 "   LeaderF requires Vim 7.4.330+
-"   python >2.7 or >3.1
+"   python >3.1 (remove python2.7 support by myself)
 "LeaderF configure
 let g:Lf_CommandMap = {'<C-X>': ['<C-O>'], '<C-]>': ['<C-I>']}
 let g:Lf_ShortcutF = '<leader>e'
