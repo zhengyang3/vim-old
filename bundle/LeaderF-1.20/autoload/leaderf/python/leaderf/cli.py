@@ -510,7 +510,7 @@ class LfCli(object):
                         yield '<Update>'
                     elif equal(cmd, '<Home>') or equal(cmd, '<C-B>'):
                         self._toBegin()
-                    elif equal(cmd, '<End>') or equal(cmd, '<C-E>'):
+                    elif equal(cmd, '<End>') or equal(cmd, '<C-L>'):
                         self._toEnd()
                     elif equal(cmd, '<Left>'):
                         self._toLeft()
