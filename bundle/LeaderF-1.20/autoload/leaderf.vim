@@ -12,21 +12,17 @@ if !exists("g:Lf_PythonVersion")
         let g:Lf_PythonVersion = 3
         let g:Lf_py = "py3 "
     elseif has("python")
-        echoe "Error: LeaderF requires vim compiled with +python3"
-        finish
         let g:Lf_PythonVersion = 2
         let g:Lf_py = "py "
     else
-        echoe "Error: LeaderF requires vim compiled with +python3"
+        echoe "Error: LeaderF requires vim compiled with +python or +python3"
         finish
     endif
 else
     if g:Lf_PythonVersion == 2
         if has("python")
-            finish
             let g:Lf_py = "py "
         else
-            finish
             echoe 'LeaderF Error: has("python") == 0'
             finish
         endif
@@ -34,7 +30,6 @@ else
         if has("python3")
             let g:Lf_py = "py3 "
         else
-            finish
             echoe 'LeaderF Error: has("python3") == 0'
             finish
         endif

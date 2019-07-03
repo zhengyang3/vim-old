@@ -10,9 +10,9 @@
 if exists('g:leaderf_loaded') || &compatible
     finish
 elseif v:version < 704 || v:version == 704 && has("patch330") == 0
-"    echohl Error
-"    echo "LeaderF requires Vim 7.4.330+."
-"    echohl None
+    echohl Error
+    echo "LeaderF requires Vim 7.4.330+."
+    echohl None
     finish
 else
     let g:leaderf_loaded = 1
