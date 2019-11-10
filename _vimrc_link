@@ -39,6 +39,9 @@ set fdo-=search
 set foldclose=all
 set foldlevel=5
 
+" set - is a word character
+set iskeyword +=-
+
 "The two lines set tab convert to 4 spaces automatically!
 set tabstop=4
 set expandtab
