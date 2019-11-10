@@ -77,7 +77,7 @@ nmap <silent> <leader>r :MRU<CR>
 
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
-"call add(g:pathogen_disabled, 'LeaderF-1.13')
+call add(g:pathogen_disabled, 'LeaderF-1.20')
 
 "Leaderf prerequisites:
 "   LeaderF requires Vim 7.4.330+
