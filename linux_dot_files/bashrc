@@ -516,3 +516,6 @@ vimlock() {
 #  #  $real_rm $rm_opts $@
 #  #fi
 #}
+
+
+#export ALL_PROXY=socks5://192.168.15.85:1080
