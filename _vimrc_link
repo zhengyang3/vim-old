@@ -454,3 +454,6 @@ let g:esearch = {
             \}
 hi ESearchMatch ctermfg=black ctermbg=yellow guifg=#000000 guibg=#E6E6FA
 hi esearchFName ctermfg=107 ctermbg=233 guifg=#000000 guibg=#E6E6FA
+
+" https://github.com/luochen1990/rainbow
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
