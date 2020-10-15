@@ -133,18 +133,36 @@ map zk <C-W>k
 map zh <C-W>h
 map zl <C-W>l
 map zu [{
+
+
+
+"====================================
+" important:   ***  use zm/zo  ****==
+"====================================
+"
+" 
+"set foldcolumn=1
+"" <2-LeftMouse>     Open fold, or select word or % match
+"nnoremap <expr> <2-LeftMouse> foldclosed(line('.')) == -1 ? "\<2-LeftMouse>" : 'zo'
+map z <Nop>
+map zj <C-W>j
+map zk <C-W>k
+map zh <C-W>h
+map zl <C-W>l
+map zu [{
 "Tips: use zr with zm; use zo/zv with zc
 "zr:reduce level;   zo:open   zc:close 
 nnoremap zz zz
 nnoremap zr zr<bar>zz
 nnoremap zR zR<bar>zz
-nnoremap zc zc<bar>zz
-vnoremap zc zc<bar>zz
-nnoremap zC zC<bar>zz
+nnoremap zc zm<bar>zz
+vnoremap zc zm<bar>zz
+nnoremap zC zM<bar>zz
 nnoremap zo zo<bar>zz
 nnoremap zO zO<bar>zz
-nnoremap zm zm<bar>zz
-nnoremap zM zM<bar>zz
+nnoremap zm zc<bar>zz
+vnoremap zm zc<bar>zz
+nnoremap zM zC<bar>zz
 nnoremap zv zv<bar>zz
 nnoremap z- z-
 nnoremap z<CR> z<CR>
